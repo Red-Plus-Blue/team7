@@ -1,20 +1,136 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="m-3">
+    <!-- Section 1 -->
+    <!-- This is the top section of the form -->
+    <div class="container border p-3 my-1">
 
+        <!-- Employee Name and SAP Number -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Employee Name:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text">
+            </div>
+            <div class="col-md-2">
+                <p class="text-left">Employee SAP#:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text">
+            </div>
+        </div>
+
+        <!-- Title and Reporting Period -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Title:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text">
+            </div>
+            <div class="col-md-2">
+                <p class="text-left">Reporting Period:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text">
+            </div>
+        </div>
+
+        <!-- Department and Division -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Department:</p>
+            </div>
+            <div class="col-md-4">
+                <select class="selectpicker w-75">
+                    <option>Department 1</option>
+                    <option>Department 2</option>
+                    <option>Department 3</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <p class="text-left">Division:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text">               
+            </div>
+        </div>
+
+        <!-- Review Type -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Review Type:</p>
+            </div>
+            <div class="col-md-4">
+                <label class="radio-inline"><input type="radio" name="input-radio-reviewType">Planning</label>
+                <label class="radio-inline"><input type="radio" name="input-radio-reviewType">Annual</label>
+            </div>
+        </div>
+
+        <!-- Supervisor or Above? -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Supervisor or Above?</p>
+            </div>
+            <div class="col-md-4">
+                <label class="radio-inline"><input type="radio" name="input-radio-supervisorOrAbove">Yes</label>
+                <label class="radio-inline"><input type="radio" name="input-radio-supervisorOrAbove">No</label>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Responsbility and Summary Entry -->
+    <div class="container border p-3 my-1">
+        <div>
+            <p class="text-left">Entry 1</p>
+            <button type="button" class="btn btn-danger float-right">Delete</button>
+            <label>Item Evaluation Weight Percentage:</label>
+            <input type="number">
+            <label>Rating</label>
+            <input type="number">
+        </div>
+        <div class="form-group">
+            <label for="input-textArea-responsibility">Responsibility/Goal:</label>
+            <textarea class="form-control" id="input-textArea-responsibility" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="input-textArea-summary">Summary of actual performance results:</label>
+            <textarea class="form-control" id="input-textArea-summary" rows="3"></textarea>
+        </div>
+    </div>
+
+    <!-- Add Entry -->
+    <div class="container p-3 my-1">
+        <button type="button" class="btn btn-secondary">Add</button>
+    </div>
+
+    <!-- Signatures -->
+    <div class="container border p-3 my-1">
+        <label>Signatures:</label>
+        <div class="row">
+            <label class="col-md-3">Manager or Supervisor:</label>
+            <input type="text" class="col-md-3">
+            <label class="col-sm-1" >Date:</label>
+            <input type="text" class="col-md-2">
+            <label class="col-sm-1">SAP #:</label>
+            <input type="text" class="col-md-2">
+        </div>
+        <div class="row">
+            <label class="col-md-3">Review Officer:</label>
+            <input type="text" class="col-md-3">
+            <label class="col-sm-1" >Date:</label>
+            <input type="text" class="col-md-2">
+            <label class="col-sm-1">SAP #:</label>
+            <input type="text" class="col-md-2">
+        </div>
+        <div class="row">
+            <label class="col-md-3">Employee:</label>
+            <input type="text" class="col-md-3">
+            <label class="col-sm-1" >Date:</label>
+            <input type="text" class="col-md-2">
+            <label class="col-sm-1">SAP #:</label>
+            <input type="text" class="col-md-2">
+        </div>
+    <div>
+
+</div>
