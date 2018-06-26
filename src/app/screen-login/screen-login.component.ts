@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-screen-login',
@@ -10,8 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScreenLoginComponent implements OnInit {
 
-  constructor() { }
+    protected router : Router;
+
+  constructor(router : Router) { 
+      this.router = router;
+  }
 
   ngOnInit() {
+  }
+
+  buttonLogin() : void {
+      this.router.navigateByUrl('/evaluation');
   }
 }
