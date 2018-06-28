@@ -1,136 +1,191 @@
 <div class="m-3">
-        <!-- Section 1 -->
-        <!-- This is the top section of the form -->
-        <div class="container border p-3 my-1">
-    
-            <!-- Employee Name and SAP Number -->
-            <div class="row">
-                <div class="col-md-2">
-                    <p class="text-left">Employee Name:</p>
-                </div>
-                <div class="col-md-4">
-                    <input type="text">
-                </div>
-                <div class="col-md-2">
-                    <p class="text-left">Employee SAP#:</p>
-                </div>
-                <div class="col-md-4">
-                    <input type="text">
-                </div>
+
+    <div class="container p-3 my-1">
+    <div class="row">
+            <div class="col-md-2">
+                <img src="assets/images/cosa.png" height="150" width="150"/>
             </div>
-    
-            <!-- Title and Reporting Period -->
-            <div class="row">
-                <div class="col-md-2">
-                    <p class="text-left">Title:</p>
-                </div>
-                <div class="col-md-4">
-                    <input type="text">
-                </div>
-                <div class="col-md-2">
-                    <p class="text-left">Reporting Period:</p>
-                </div>
-                <div class="col-md-4">
-                    <input type="text">
-                </div>
+            <div class="col-md-8">
+                <h2 class="text-center">City of San Antonio</h2>
+                <h3 class="text-center">Employee Performance Evaluation</h3>
+                <h4 class="text-center">Performance Pay Eligible</h4>
             </div>
-    
-            <!-- Department and Division -->
-            <div class="row">
-                <div class="col-md-2">
-                    <p class="text-left">Department:</p>
-                </div>
-                <div class="col-md-4">
-                    <select class="selectpicker w-75">
-                        <option>Department 1</option>
-                        <option>Department 2</option>
-                        <option>Department 3</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <p class="text-left">Division:</p>
-                </div>
-                <div class="col-md-4">
-                    <input type="text">               
-                </div>
-            </div>
-    
-            <!-- Review Type -->
-            <div class="row">
-                <div class="col-md-2">
-                    <p class="text-left">Review Type:</p>
-                </div>
-                <div class="col-md-4">
-                    <label class="radio-inline"><input type="radio" name="input-radio-reviewType">Planning</label>
-                    <label class="radio-inline"><input type="radio" name="input-radio-reviewType">Annual</label>
-                </div>
-            </div>
-    
-            <!-- Supervisor or Above? -->
-            <div class="row">
-                <div class="col-md-2">
-                    <p class="text-left">Supervisor or Above?</p>
-                </div>
-                <div class="col-md-4">
-                    <label class="radio-inline"><input type="radio" name="input-radio-supervisorOrAbove">Yes</label>
-                    <label class="radio-inline"><input type="radio" name="input-radio-supervisorOrAbove">No</label>
-                </div>
-            </div>
-    
-        </div>
-    
-        <!-- Responsbility and Summary Entry -->
-        <div class="container border p-3 my-1">
-            <div>
-                <p class="text-left">Entry 1</p>
-                <button type="button" class="btn btn-danger float-right">Delete</button>
-                <label>Item Evaluation Weight Percentage:</label>
-                <input type="number">
-                <label>Rating</label>
-                <input type="number">
-            </div>
-            <div class="form-group">
-                <label for="input-textArea-responsibility">Responsibility/Goal:</label>
-                <textarea class="form-control" id="input-textArea-responsibility" rows="2"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="input-textArea-summary">Summary of actual performance results:</label>
-                <textarea class="form-control" id="input-textArea-summary" rows="3"></textarea>
+            <div class="col-md-2">
+                <h4>Human</h4>
+                <h4>Resources</h4>
             </div>
         </div>
-    
-        <!-- Add Entry -->
-        <div class="container p-3 my-1">
-            <button type="button" class="btn btn-secondary">Add</button>
-        </div>
-    
-        <!-- Signatures -->
-        <div class="container border p-3 my-1">
-            <label>Signatures:</label>
-            <div class="row">
-                <label class="col-md-3">Manager or Supervisor:</label>
-                <input type="text" class="col-md-3">
-                <label class="col-sm-1" >Date:</label>
-                <input type="text" class="col-md-2">
-                <label class="col-sm-1">SAP #:</label>
-                <input type="text" class="col-md-2">
-            </div>
-            <div class="row">
-                <label class="col-md-3">Review Officer:</label>
-                <input type="text" class="col-md-3">
-                <label class="col-sm-1" >Date:</label>
-                <input type="text" class="col-md-2">
-                <label class="col-sm-1">SAP #:</label>
-                <input type="text" class="col-md-2">
-            </div>
-            <div class="row">
-                <label class="col-md-3">Employee:</label>
-                <input type="text" class="col-md-3">
-                <label class="col-sm-1" >Date:</label>
-                <input type="text" class="col-md-2">
-                <label class="col-sm-1">SAP #:</label>
-                <input type="text" class="col-md-2">
-            </div>
-        <div>
-    
+        
     </div>
+
+    <!-- Section 1 -->
+    <!-- This is the top section of the form -->
+    <div class="container border p-3 my-1">
+
+        <!-- Employee Name and SAP Number -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Employee Name:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text" [disabled]="!isSupervisor">
+            </div>
+            <div class="col-md-2">
+                <p class="text-left">Employee SAP#:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text" [disabled]="!isSupervisor">
+            </div>
+        </div>
+
+        <!-- Title and Reporting Period -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Title:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text" [disabled]="!isSupervisor">
+            </div>
+            <div class="col-md-2">
+                <p class="text-left">Reporting Period:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text" [disabled]="!isSupervisor">
+            </div>
+        </div>
+
+        <!-- Department and Division -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Department:</p>
+            </div>
+            <div class="col-md-4">
+                <select class="selectpicker w-75" [disabled]="!isSupervisor">
+                    <option>Department 1</option>
+                    <option>Department 2</option>
+                    <option>Department 3</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <p class="text-left">Division:</p>
+            </div>
+            <div class="col-md-4">
+                <input type="text" [disabled]="!isSupervisor">               
+            </div>
+        </div>
+
+        <!-- Review Type -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Review Type:</p>
+            </div>
+            <div class="col-md-4">
+                <label class="radio-inline"><input [disabled]="!isSupervisor" type="radio" checked="checked" name="input-radio-reviewType">Planning</label>
+                <label class="radio-inline"><input [disabled]="!isSupervisor" type="radio" name="input-radio-reviewType">Annual</label>
+            </div>
+        </div>
+
+        <!-- Supervisor or Above? -->
+        <div class="row">
+            <div class="col-md-2">
+                <p class="text-left">Supervisor or Above?</p>
+            </div>
+            <div class="col-md-4">
+                <label class="radio-inline"><input [disabled]="!isSupervisor" type="radio" name="input-radio-supervisorOrAbove">Yes</label>
+                <label class="radio-inline"><input [disabled]="!isSupervisor" type="radio" checked="checked" name="input-radio-supervisorOrAbove">No</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container p-3 my-1">
+        <h4 class="text-left"> Rating Descriptions: </h4>
+        <div>
+            <div class="row">
+                <div class="col-sm-3 border">
+                    <p class="text-center">1 - Improvement Needed</p>
+                    <p class="text-center">Does not meet the requirements of the job, task or project. Improvement is needed.</p>
+                </div>
+                <div class="col-sm-3 border">
+                    <p class="text-center">2 - Achieves Expectations</p>
+                    <p class="text-center">Successfully meets the requirements of the job, task or project. Performance consistently meets standards</p>
+                </div>
+                <div class="col-sm-3 border">
+                    <p class="text-center">3 - Exceeds Expectations</p>
+                    <p class="text-center">Exceeds the requirements of the job, task or project. Performance is characterized by consistent high achievement.</p>
+                </div>
+                <div class="col-sm-3 border">
+                    <p class="text-center">4 - Outstanding</p>
+                    <p class="text-center">Far exceeds the requirements of the job, task or project. Performance consistently shows outstanding achievement for above expectations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4 class="text-left"> Section I: Responsibilities, Goals, and Measures </h4>
+        <p>(70% of overall rating; evaluation weight assigned)</p>
+    </div>
+    <div class="container border p-3 my-1">
+        <p>Responsibilities, Goals, and Measures: Each entry in this table contains 4 items: A description of the responsibility/goal that includes any specific performance metric or project deadling, a specific weight percentage component; a summary of actual performance results; and the rating for this entry.</p>
+        <p>Press the Add button at the end of the table to add a row, press the Delete button in the table row to delete that row</p>
+    </div>
+
+    <!-- Responsbility and Summary Entry -->
+    <div *ngFor="let entry of summaryEntries">
+        <app-evaluation-entry [entry]="entry"></app-evaluation-entry>
+    </div>
+
+    <!-- Add Entry -->
+    <div class="container p-3 my-1">
+        <button (click)="buttonAddSummaryEntry($event)" type="button" class="btn btn-secondary">Add</button>
+    </div>
+
+    <!-- Overall Rating -->
+    <div class="container p-3 my-1">
+        <h3>Overall Rating: #</h3>
+    </div>
+
+    <!-- Signatures -->
+    <div class="container border p-3 my-1">
+        <label>Signatures:</label>
+        <div class="row">
+            <label class="col-md-3">Manager or Supervisor:</label>
+            <input [disabled]="!isSupervisor" type="text" class="col-md-3">
+            <label class="col-sm-1" >Date:</label>
+            <input [disabled]="!isSupervisor" type="text" class="col-md-2">
+            <label class="col-sm-1">SAP #:</label>
+            <input [disabled]="!isSupervisor" type="text" class="col-md-2">
+        </div>
+        <div class="row">
+            <label class="col-md-3">Review Officer:</label>
+            <input [disabled]="!isReviewingOfficer" type="text" class="col-md-3">
+            <label class="col-sm-1" >Date:</label>
+            <input [disabled]="!isReviewingOfficer" type="text" class="col-md-2">
+            <label class="col-sm-1">SAP #:</label>
+            <input [disabled]="!isReviewingOfficer" type="text" class="col-md-2">
+        </div>
+        <div class="row">
+            <label class="col-md-3">Employee:</label>
+            <input [disabled]="!isEmployee" type="text" class="col-md-3">
+            <label class="col-sm-1" >Date:</label>
+            <input [disabled]="!isEmployee" type="text" class="col-md-2">
+            <label class="col-sm-1">SAP #:</label>
+            <input [disabled]="!isEmployee" type="text" class="col-md-2">
+        </div>
+    </div>
+
+    <div class="container border p-3 my-1">
+        <ul>
+            <li>Signing your performance evaluation acknowledges the evaluation has been discussed with you.</li>
+            <li>If you disagree with the overall rating, you may submit and appeal in writing to the Reviewer listed above, using the Appeal Form found on FormsNet.</li>
+            <li>Appeal must be receieved by the Reviewing Officer within ten (10) working days beginning the day after the employee receives the evaluation or when a witness signs that the employee received this evaluation.</li>
+        </ul>
+    </div>
+
+     <!-- Agree/Disagree -->
+     <div class="container p-3 my-1 text-center">
+            <button type="button" class="btn btn-secondary mx-2">Agree with Rating</button>
+            <button type="button" class="btn btn-secondary mx-2">Disagree with Rating</button>
+        </div>
+
+</div>
