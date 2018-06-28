@@ -1,7 +1,7 @@
 <div class="m-3">
 
     <div class="container p-3 my-1">
-    <div class="row">
+        <div class="row">
             <div class="col-md-2">
                 <img src="assets/images/cosa.png" height="150" width="150"/>
             </div>
@@ -15,7 +15,6 @@
                 <h4>Resources</h4>
             </div>
         </div>
-        
     </div>
 
     <!-- Section 1 -->
@@ -127,7 +126,7 @@
     </div>
     <div class="container border p-3 my-1">
         <p>Responsibilities, Goals, and Measures: Each entry in this table contains 4 items: A description of the responsibility/goal that includes any specific performance metric or project deadling, a specific weight percentage component; a summary of actual performance results; and the rating for this entry.</p>
-        <p>Press the Add button at the end of the table to add a row, press the Delete button in the table row to delete that row</p>
+        <p class="instruction" >Press the Add button at the end of the table to add a row, press the Delete button in the table row to delete that row</p>
     </div>
 
     <!-- Responsbility and Summary Entry -->
@@ -136,7 +135,7 @@
     </div>
 
     <!-- Add Entry -->
-    <div class="container p-3 my-1">
+    <div *ngIf="isSupervisor" class="container p-3 my-1">
         <button (click)="buttonAddSummaryEntry($event)" type="button" class="btn btn-secondary">Add</button>
     </div>
 
@@ -174,7 +173,7 @@
         </div>
     </div>
 
-    <div class="container border p-3 my-1">
+    <div *ngIf="isEmployee" class="container border p-3 my-1">
         <ul>
             <li>Signing your performance evaluation acknowledges the evaluation has been discussed with you.</li>
             <li>If you disagree with the overall rating, you may submit and appeal in writing to the Reviewer listed above, using the Appeal Form found on FormsNet.</li>
@@ -183,7 +182,7 @@
     </div>
 
      <!-- Agree/Disagree -->
-     <div class="container p-3 my-1 text-center">
+     <div *ngIf="isEmployee" class="container p-3 my-1 text-center">
             <button type="button" class="btn btn-secondary mx-2">Agree with Rating</button>
             <button type="button" class="btn btn-secondary mx-2">Disagree with Rating</button>
         </div>

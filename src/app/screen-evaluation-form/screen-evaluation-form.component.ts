@@ -1,5 +1,5 @@
+import {Router, ActivatedRoute, Params} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { EvaluationEntryComponent } from '../evaluation-entry/evaluation-entry.component';
 import { EvaluationEntry } from '../evaluation-entry/evaluation-entry';
 
 @Component({
@@ -7,20 +7,36 @@ import { EvaluationEntry } from '../evaluation-entry/evaluation-entry';
     templateUrl: './screen-evaluation-form.component.html',
     styleUrls: [
         './screen-evaluation-form.component.css',
-        '../../../node_modules/bootstrap/dist/css/bootstrap.css'
+        '../../../node_modules/bootstrap/dist/css/bootstrap.css',
+        '../../assets/css-common/common.css'
     ]
 })
 export class ScreenEvaluationFormComponent implements OnInit {
 
     summaryEntries : EvaluationEntry[];
 
-    isSupervisor        : boolean = true;
+    isSupervisor        : boolean = false;
     isReviewingOfficer  : boolean = false;
     isEmployee          : boolean = false;
 
-    constructor() { 
+    constructor(private activatedRoute : ActivatedRoute) { 
         this.summaryEntries = [];
         this.createEntry();
+    }
+
+    ngOnInit() {
+        this.activatedRoute.queryParams.subscribe((params: Params) => {
+            let role = params['role'];
+            if(role === "employee") {
+                this.isEmployee = true;
+            }
+            if(role === "supervisor") {
+                this.isSupervisor = true;
+            }
+            if(role === "reviewing_officer") {
+                this.isReviewingOfficer = true;
+            }
+          });
     }
 
     createEntry() : void {
@@ -32,9 +48,6 @@ export class ScreenEvaluationFormComponent implements OnInit {
         };
         this.summaryEntries.push(entry);
 
-    }
-
-    ngOnInit() {
     }
 
     refreshEntries() : void {
