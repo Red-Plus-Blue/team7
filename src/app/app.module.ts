@@ -7,13 +7,20 @@ import { AppComponent } from './app.component';
 import { ScreenLoginComponent } from './screen-login/screen-login.component';
 import { ScreenEvaluationFormComponent } from './screen-evaluation-form/screen-evaluation-form.component';
 import { ScreenPageNotFoundComponent } from './screen-page-not-found/screen-page-not-found.component';
+<<<<<<< HEAD
 import { EvaluationEntryComponent } from './evaluation-entry/evaluation-entry.component';
+=======
+import { ScreenAppealFormComponent } from './screen-appeal-form/screen-appeal-form.component';
+>>>>>>> kyle
 
 const appRoutes: Routes = [
     { path: 'login', 
         component: ScreenLoginComponent },
     { path: 'evaluation',
         component: ScreenEvaluationFormComponent,
+    },
+    { path: 'appeal',
+        component: ScreenAppealFormComponent,
     },
     { path: '',
     redirectTo: '/login',
@@ -28,7 +35,11 @@ const appRoutes: Routes = [
         ScreenLoginComponent,
         ScreenEvaluationFormComponent,
         ScreenPageNotFoundComponent,
+<<<<<<< HEAD
         EvaluationEntryComponent
+=======
+        ScreenAppealFormComponent
+>>>>>>> kyle
     ],
   imports: [
       FormsModule,
