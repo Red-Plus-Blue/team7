@@ -9,10 +9,14 @@ import { ScreenEvaluationFormComponent } from './screen-evaluation-form/screen-e
 import { ScreenPageNotFoundComponent } from './screen-page-not-found/screen-page-not-found.component';
 import { EvaluationEntryComponent } from './evaluation-entry/evaluation-entry.component';
 import { ScreenAppealFormComponent } from './screen-appeal-form/screen-appeal-form.component';
+import { ScreenEvaluationPayFormComponent } from './screen-evaluation-pay-form/screen-evaluation-pay-form.component';
 
 const appRoutes: Routes = [
     { path: 'login', 
         component: ScreenLoginComponent 
+    },
+    { path: 'pay', 
+        component: ScreenEvaluationPayFormComponent 
     },
     { path: 'evaluation',
         component: ScreenEvaluationFormComponent,
@@ -34,7 +38,8 @@ const appRoutes: Routes = [
         ScreenEvaluationFormComponent,
         ScreenPageNotFoundComponent,
         EvaluationEntryComponent,
-        ScreenAppealFormComponent
+        ScreenAppealFormComponent,
+        ScreenEvaluationPayFormComponent
     ],
   imports: [
       FormsModule,

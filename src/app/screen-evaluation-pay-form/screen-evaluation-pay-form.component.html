@@ -63,7 +63,7 @@
                     <input type="text">               
                 </div>
             </div>
-
+    
             <!-- Review Type -->
             <div class="row">
                 <div class="col-md-2">
@@ -74,95 +74,37 @@
                     <label class="radio-inline" ><input type="radio" name="input-radio-reviewType">Annual</label>
                 </div>
             </div>
-
-            <!-- Supervisor or Above? -->
-            <div class="row">
-                <div class="col-md-2">
-                    <p class="text-left"><span style="color: red">*</span>Supervisor or Above?</p>
-                </div>
-                <div class="col-md-4">
-                    <label class="radio-inline"><input type="radio" name="input-radio-supervisorOrAbove">Yes</label>
-                    <label class="radio-inline"><input type="radio" name="input-radio-supervisorOrAbove">No</label>
-                </div>
-            </div>
-    
         </div>
-     <!--Rating Descriptions-->
+
+        <!--Rating Descriptions-->
         <div class ="container border p-3 my-1 ">
             <p class = "text-left" style="font-size:15px;margin:0px;padding-bottom:10px;line-height:0px;font-weight:bold;">Rating Descriptions</p>
             <div class="row " style="border:1px solid black;">
-                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
+                <div class="col-md-4 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
                     <p class="text-center">1-Improvement Needed</p>
                 </div>
-                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
+                <div class="col-md-4 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
                     <p class="text-center">2-Achieves Expectations</p>
                 </div>
-                <div class="col-md-3" style="border-right:1px solid black;padding-top: 9px;padding-bottom: 0px">
+                    <div class="col-md-4" style="padding-top: 9px;padding-bottom: 0px">
                     <p class="text-center">3-Exceptional</p>
-                </div>
-                <div class="col-md-3" style="padding-top: 9px;padding-bottom: 0px">
-                    <p class="text-center">4-Outstanding</p>
                 </div>
             </div>
             <div class="row " style="border:1px solid black">
-                <div class="col-md-3" style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
+                <div class="col-md-4 " style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
                     <p class="text-center">Does not meet the requirements of the job, task or project. Improvement is needed.</p>
                 </div>
-                <div class="col-md-3" style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
+                <div class="col-md-4 " style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
                     <p class="text-center">Successfully meets the requirements of the job, task or project. Performance consistently meets standards.</p>
                 </div>
-                <div class="col-md-3" style="border-right:1px solid black;padding-top: 0px;padding-bottom: 0px">
+                    <div class="col-md-4" style="padding-top: 0px;padding-bottom: 0px">
                     <p class="text-center">Exceeds the requirements of the job, task or project. Performance is characterized by consistent high achievement.</p>
                 </div>
-                <div class="col-md-3" style="padding-top: 0px;padding-bottom: 0px">
-                    <p class="text-center">Far exceeds the requirements of the job, task or project. Performance consistently shows outstanding achievement far above expectations.</p>
-                </div>
             </div>
         </div>
-        <!-- Section I -->
+        <!--Section 1 Core Values-->
         <div class ="container border p-3 my-1 ">
-            <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section I: Responsibilities, Goals, and Measures <span style="font-size: 14px;font-weight: normal;">(70% of overall rating; equally weighted)</span></p>
-            <div class="row" style="border:1px solid black;height:47px;">
-                <div class="col-md-11" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
-                    <p class="text-left"><span style="font-weight:bold">Responsibilities, Goals, and Measures:</span> Each entry in this table contains 3 items: A description of the responsibility/goal that includes any specific performance metric or project deadline; a summary of the actual performance results; and the rating for this entry.</p>
-                </div>
-                    <div class="col-md-1" style="padding-top: 2px;padding-bottom: 0px">
-                        <button type="button" class="btn btn-secondary">Add</button>
-                </div>
-            </div>
-            <div class="row " style="border:1px solid black;">
-                <div class="col-md-1 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-center" style="font-size:16px">Entry: 1</p>
-                </div>
-                <div class="col-md-8 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <label style="padding-right: 15px">Item Evaluation Weight Percentage (total of all weights=100%):</label>
-                    <input class="number" style="width: 40px;"type="text">
-                </div>
-                <div class="col-md-2" style="border-right:1px solid black;padding-top: 9px;padding-bottom: 0px">
-                    <label style="padding-right: 15px">Rating:</label>
-                    <input class="number" style="width: 30px;"type="text">
-                </div>
-                <div class="col-md-1" style="padding-top: 5px;padding-bottom: 2px">
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div>
-            </div> 
-            <div class="row " style="border:1px solid black;">
-                <div class="col-md-12 form-group">
-                    <label for="input-textArea-responsibility">Responsibility/Goal:</label>
-                    <textarea class="form-control" id="input-textArea-responsibility" rows="2"></textarea>
-                </div>
-            </div> 
-            <div class="row " style="border:1px solid black;">
-                <div class="col-md-12 form-group">
-                    <label for="input-textArea-responsibility">Summary of actual performance results:</label>
-                    <textarea class="form-control" id="input-textArea-responsibility" rows="2"></textarea>
-                </div>
-            </div>
-        </div>
-        <!--Section II Core Values-->
-        <div class ="container border p-3 my-1 ">
-            <p style="font-size:13px">Sections II and III (if applicable) combine to provide 30% of overall rating; equally weighted<br><br></p>
-            <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section II: CORE Values</p>
+            <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section I: CORE Values <span style="font-size: 14px;font-weight: normal;">(30% of overall rating; equally weighted)</span></p>
             <div class="row" style="border:1px solid black;height:25px;">
                 <div class="col-md-11" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
                     <p class="text-left">Indicate the Employee's performance level by assigning a rating for each CORE Value.</p>
@@ -227,79 +169,51 @@
                 </div>
             </div>
         </div>
-        <!--Section III Leadership-->
+        <!-- Section II -->
         <div class ="container border p-3 my-1 ">
-            <p class = "text-left" style="font-size:18px;margin-top:8px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section III:  Leadership Assessment (for Supervisors and above)</p>
-            <div class="row" style="border:1px solid black;height:25px;">
+            <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section II: Responsibilities, Goals, and Measures <span style="font-size: 14px;font-weight: normal;">(70% of overall rating; equally weighted)</span></p>
+            <div class="row" style="border:1px solid black;height:47px;">
                 <div class="col-md-11" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
-                    <p class="text-left">Indicate the Employee's performance level by assigning a rating for each attribute.</p>
+                    <p class="text-left"><span style="font-weight:bold">Responsibilities, Goals, and Measures:</span> Each entry in this table contains 3 items: A description of the responsibility/goal that includes any specific performance metric or project deadline; a summary of the actual performance results; and the rating for this entry.</p>
                 </div>
                     <div class="col-md-1" style="padding-top: 2px;padding-bottom: 0px">
-                    <p class="text-center">Rating</p>
-                </div>
-            </div>            
-            <div class="row " style="border:1px solid black;">
-                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left" style="font-weight: bold;font-size:19px"><br><br>Leadership and Development</p>
-                </div>
-                <div class="col-md-8 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left">Leadership is clear, undisputed, and supported by team members<br>Handles conflict between team members quickly and effectively<br>Clearly communicates time lines and expectations to team members<br>Facilitates communication to ensure that team members are informed about issues, progress, and next steps<br>Ensures team members have opportunities to develop their skills</p>
-                </div>
-                <div class="col-md-1" style="padding-top: 9px;padding-bottom: 0px">
-                    <br><br><input class="center-block" style="width: 30px;"type="text">
+                        <button type="button" class="btn btn-secondary">Add</button>
                 </div>
             </div>
             <div class="row " style="border:1px solid black;">
-                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left" style="font-weight: bold;font-size:19px"><br>Strategic Thinking</p>
+                <div class="col-md-1 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
+                    <p class="text-center" style="font-size:16px">Entry: 1</p>
                 </div>
                 <div class="col-md-8 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left">Understands and uses financial indicators/metrics to measure performance<br>Identifies, recruits, and retains great talent that expands our capability and mirrors our customer base</p>
+                    <p class="text-left"></p>
                 </div>
-                <div class="col-md-1" style="padding-top: 9px;padding-bottom: 0px">
-                    <br><input class="center-block" style="width: 30px;"type="text">
+                <div class="col-md-2" style="border-right:1px solid black;padding-top: 9px;padding-bottom: 0px">
+                    <label style="padding-right: 15px">Rating:</label>
+                    <input class="number" style="width: 30px;"type="text">
                 </div>
-            </div>
+                <div class="col-md-1" style="padding-top: 5px;padding-bottom: 2px">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div> 
             <div class="row " style="border:1px solid black;">
-                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left" style="font-weight: bold;font-size:19px"><br>Drives Excellence</p>
+                <div class="col-md-12 form-group">
+                    <label for="input-textArea-responsibility">Responsibility/Goal:</label>
+                    <textarea class="form-control" id="input-textArea-responsibility" rows="2"></textarea>
                 </div>
-                <div class="col-md-8 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left">Holds employees accountable for performance<br>Communicates with business partners at all levels regularly, accurately, and in detail<br>Focuses on process and operational consistency to reduce cost, improve performance, and meet targeted budget goals</p>
-                </div>
-                <div class="col-md-1" style="padding-top: 9px;padding-bottom: 0px">
-                    <br><input class="center-block" style="width: 30px;"type="text">
-                </div>
-            </div>
+            </div> 
             <div class="row " style="border:1px solid black;">
-                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left" style="font-weight: bold;font-size:19px">Decision-Making</p>
-                </div>
-                <div class="col-md-8 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left">Causes and underlying issues are analyzed to fully understand situation/choices prior to decision-making<br>Empowers team to solve problems and make decisions</p>
-                </div>
-                <div class="col-md-1" style="padding-top: 9px;padding-bottom: 0px">
-                    <input class="center-block" style="width: 30px;"type="text">
-                </div>
-            </div>
-            <div class="row " style="border:1px solid black;">
-                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left" style="font-weight: bold;font-size:19px">Professional Development Plan</p>
-                </div>
-                <div class="col-md-8 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-left">Employee follow-through on the Professional Development Plan outlined in Section IV</p>
-                </div>
-                <div class="col-md-1" style="padding-top: 9px;padding-bottom: 0px">
-                    <input class="center-block" style="width: 30px;"type="text">
+                <div class="col-md-12 form-group">
+                    <label for="input-textArea-responsibility">Summary of actual performance results:</label>
+                    <textarea class="form-control" id="input-textArea-responsibility" rows="2"></textarea>
                 </div>
             </div>
         </div>
-        <!-- Section IV -->
+        <!-- Section III -->
         <div class ="container border p-3 my-1 ">
-            <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section IV: Professional Development Plan</p>
+            <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section III: Professional Development Plan</p>
             <div class="row" style="border:1px solid black;height:43px;">
                 <div class="col-md-11" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
-                    <p class="text-left"><span style="font-weight:bold"> Goals and Milestones:</span>List specific goals for Professional Development the Employee will achieve over the next twelve (12) months, and the time frame or target completion date for each objective. (Limit entries to one (1) objective per row.)</p>
+                    <p class="text-left"><span style="font-weight:bold"> Goals and Milestones:</span>List specific goals for Employee Development over the next twelve (12) months, including how you will support the Employee to meet these goals. (Limit entries to one (1) objective per row.)</p>
                 </div>
                     <div class="col-md-1" style="padding-top: 2px;padding-bottom: 0px">
                         <button type="button" class="btn btn-secondary">Add</button>
@@ -323,12 +237,12 @@
                 </div>
             </div> 
         </div>
-         <!-- Section V -->
+        <!-- Section IV -->
         <div class ="container border p-3 my-1 ">
-            <p class = "text-left" style="font-size:18px;margin-top:1px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section V: Narrative Summary and Assessment</p>
+            <p class = "text-left" style="font-size:18px;margin-top:1px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section IV: Narrative Summary and Assessment</p>
             <div class="row" style="border:1px solid black;height:43px;">
                 <div class="col-md-12" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
-                    <p class="text-left"><b> Rater Comments :</b> (Write a brief description of overall performance for the review period, along with details of individual areas of exceptional performance (rating of <b>3</b> or <b>4</b>) or of performance needing more attention or improvement (rating of <b>1</b>).</p>
+                    <p class="text-left"><span style="font-weight:bold"> Rater Comments : </span>(Write a brief description of overall performance for the review period, along with details of individual areas of exceptional performance (rating of <span style="font-weight:bold">3</span>) or of performance needing more attention or improvement (rating of <span style="font-weight:bold">1</span>).</p>
                 </div>
             </div>
             <div class="row " style="border:1px solid black;">
@@ -337,9 +251,9 @@
                 </div>
             </div> 
         </div>
-        <!-- Section VI -->
+        <!-- Section V -->
         <div class ="container border p-3 my-1 ">
-            <p class = "text-left" style="font-size:18px;margin-top:1px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section VI: Comments (Optional)</p>
+            <p class = "text-left" style="font-size:18px;margin-top:1px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section V: Comments (Optional)</p>
             <div class="row" style="border:1px solid black;height:29px;">
                 <div class="col-md-12" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
                     <p class="text-left" style="font-weight:bold"> Reviewer Comments</p>
@@ -393,7 +307,7 @@
         <div class ="container border p-3 my-1 ">
             <div class="row" style="border:1px solid black;">
                 <div class="col-md-2" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
-                    <p class="text-left">4-Outstanding<br>3-Exceeds Expectations<br>2-Achieves Expectations<br>1-Improvement Needed</p>
+                    <p class="text-left">3-Exceptional<br><br>2-Achieves Expectations<br><br> 1-Improvement Needed</p>
                 </div>
                 <div class="col-md-2" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
                     <p style="text-align: center;">Overall Rating</p>
@@ -404,7 +318,7 @@
                     <label class="agree-disagree-label" ><input type="radio" name="agree-disagree-input">Disagree with Rating</label>
                 </div>
                 <div class="col-md-6" style="padding-top:2px;padding-bottom:0px">
-                    <p style="font-size:12px;font-weight:bold">• Signing your performance evaluation acknowledges the evaluation has been discussed with you.<br>• If you disagree with the overall rating, you may submit an appeal in writing to the Reviewer listed above, using the Appeal Form found on FormsNet.<br>• Appeal must be received by the Reviewing Officer within ten (10) working days beginning the day after the employee receives this evaluation or when a witness signs that the employee received this evaluation.</p>
+                    <p style="font-size:13px;font-weight:bold">• Signing your performance evaluation acknowledges the evaluation has been discussed with you.<br>• If you disagree with the overall rating, you may submit an appeal in writing to the Reviewer listed above, using the Appeal Form found on FormsNet.<br>• Appeal must be received by the Reviewing Officer within ten (10) working days beginning the day after the employee receives this evaluation or when a witness signs that the employee received this evaluation.<br>• <u>NOTE:</u> effective with the FY 2018 rating period (10/1/17 - 9/30/18), step increases will only be awarded to those employees achieving a rating of "Achieves Expectations" or above.</p>
                 </div>
             </div>
         </div>
