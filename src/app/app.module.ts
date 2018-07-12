@@ -7,10 +7,13 @@ import { ScreenLoginComponent } from './screen-login/screen-login.component';
 import { ScreenEvaluationFormComponent } from './screen-evaluation-form/screen-evaluation-form.component';
 import { ScreenPageNotFoundComponent } from './screen-page-not-found/screen-page-not-found.component';
 import { ScreenAppealFormComponent } from './screen-appeal-form/screen-appeal-form.component';
+import { ScreenEvaluationPayFormComponent } from './screen-evaluation-pay-form/screen-evaluation-pay-form.component';
 
 const appRoutes: Routes = [
     { path: 'login', 
         component: ScreenLoginComponent },
+    { path: 'pay', 
+        component: ScreenEvaluationPayFormComponent },
     { path: 'evaluation',
         component: ScreenEvaluationFormComponent,
     },
@@ -30,7 +33,8 @@ const appRoutes: Routes = [
         ScreenLoginComponent,
         ScreenEvaluationFormComponent,
         ScreenPageNotFoundComponent,
-        ScreenAppealFormComponent
+        ScreenAppealFormComponent,
+        ScreenEvaluationPayFormComponent
     ],
   imports: [
       RouterModule.forRoot(
