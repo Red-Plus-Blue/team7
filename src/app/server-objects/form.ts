@@ -1,7 +1,8 @@
 import { Section } from './section'
+import { FormSummary } from './form-summary';
 
 export interface Form {
-    summary         : String;
+    summary         : FormSummary;
     formVersion     : number;
     sections        : Section[];   
 }

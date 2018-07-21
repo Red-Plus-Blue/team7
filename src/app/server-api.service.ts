@@ -17,7 +17,26 @@ export class ServerApiService {
     }
 
     readForm(id : number) : ServerResponse<Form> {
-        return { error : null, object : null };
+        return { 
+            error : null,
+            object : {
+                summary : {
+                    id : 1,
+                    creator : "Employee 1",
+                    creatorSAPNumber : "123",
+                    employee : "Employee 2",
+                    employeeSAPNumber : "012",
+                    formType : "step-pay",
+                    dateCreated : "2018-01-01",
+                    formState : {
+                        id : "edit",
+                        enabledRole : "creator"
+                    }
+                },
+                formVersion : 1,
+                sections    : []
+            } 
+        };
     }
 
     editForm(id : number, form : Form) : ServerResponse<Form> {
