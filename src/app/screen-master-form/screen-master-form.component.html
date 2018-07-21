@@ -44,7 +44,7 @@
 
         <div *ngFor="let section of form.sections">
             <ng-container [ngSwitch]="section?.sectionType">
-                <app-section-employee-information           *ngSwitchCase="'employee_information'" [inputSection]="section"></app-section-employee-information>
+                <app-section-employee-information           *ngSwitchCase="'employee_information'" [inputSection]="section" [departments]="departments"></app-section-employee-information>
                 <app-section-responsibilities-and-goals     *ngSwitchCase="'responsibilities_and_goals'" [inputSection]="section"></app-section-responsibilities-and-goals>
                 <app-section-core-values                    *ngSwitchCase="'core_values'" [inputSection]="section"></app-section-core-values>
                 <app-section-leadership-assessment          *ngSwitchCase="'leadership_assessment'" [inputSection]="section"></app-section-leadership-assessment>

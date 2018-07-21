@@ -21,7 +21,6 @@ export class SectionCommentsComponent implements OnInit {
 
     ngOnInit() {
         this.section = this.inputSection as CommentsSection;
-        console.log(this.section.employeeComments);
     }
 
 }

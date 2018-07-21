@@ -14,6 +14,7 @@ export class SectionEmployeeInformationComponent implements OnInit {
 
     section : EmployeeInformationSection;
     @Input() inputSection : Section;
+    @Input() departments : String[];
 
     constructor() { }
 

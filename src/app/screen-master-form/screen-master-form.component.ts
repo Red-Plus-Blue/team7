@@ -13,10 +13,12 @@ import { Form } from '../server-objects/form';
 })
 export class ScreenMasterFormComponent implements OnInit {
 
-    form : Form;
+    form            : Form;
+    departments     : String[];
 
     constructor(private serverApi : ServerApiService) { 
-        this.form = serverApi.readForm(1).object;
+        this.form           = serverApi.readForm(1).object;
+        this.departments    = serverApi.getDepartmentList().object;
     }
 
     ngOnInit() { }

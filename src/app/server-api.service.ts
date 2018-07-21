@@ -12,6 +12,18 @@ export class ServerApiService {
 
     constructor() { }
 
+    getDepartmentList() : ServerResponse<String[]> {
+        return {
+            error : null,
+            object : [
+                "Example Department",
+                "Demo Department",
+                "Sample Department",
+                "Possible Department"
+            ]
+        }
+    }
+
     createForm(formSummary : FormSummary) : ServerResponse<FormSummary> {
         return { error : null, object : null };
     }
@@ -22,15 +34,15 @@ export class ServerApiService {
             object : {
                 summary : {
                     id : 1,
-                    creator : "Employee 1",
-                    creatorSAPNumber : "123",
-                    employee : "Employee 2",
-                    employeeSAPNumber : "012",
-                    formType : "step-pay",
-                    dateCreated : "2018-01-01",
+                    creator             : "Employee 1",
+                    creatorSAPNumber    : "123",
+                    employee            : "Employee 2",
+                    employeeSAPNumber   : "012",
+                    formType            : "step-pay",
+                    dateCreated         : "2018-01-01",
                     formState : {
-                        id : "edit",
-                        enabledRole : "creator"
+                        id              : "edit",
+                        enabledRole     : "creator"
                     }
                 },
                 formVersion : 1,
@@ -39,11 +51,13 @@ export class ServerApiService {
                         sectionType         : "employee_information",
                         sectionSubType      : null,
                         sectionVersion      : 1,
-                        employeeName        : "John Doe",
+                        name                : "John Doe",
                         employeeSAPNumber   : "123456789",
                         department          : "Example Department",
-                        raterName           : "Jane Doe",
-                        raterSAPNumber      : "987654321"
+                        title               : "Professional Employee",
+                        division            : "Example division",
+                        reportingPeriod     : "Qaurter 1",
+                        reviewType          : "planning"
                     },
                     {
                         sectionType     : "responsibilities_and_goals",
@@ -56,9 +70,10 @@ export class ServerApiService {
                         sectionSubType  : null,
                         sectionVersion  : 1,
                         ratings         : {
-                            "rating 1" : 1,
-                            "rating 2" : 2,
-                            "rating 3" : 3,
+                            "teamwork"          : 1,
+                            "integrity"         : 2,
+                            "innovation"        : 3,
+                            "professionalism"   : 1
                         }
                     },
                     {
@@ -66,9 +81,11 @@ export class ServerApiService {
                         sectionSubType  : null,
                         sectionVersion  : 1,
                         ratings         : {
-                            "rating 1" : 1,
-                            "rating 2" : 2,
-                            "rating 3" : 3,
+                            "leadership_and_development"    : 1,
+                            "strategic_thinking"            : 2,
+                            "drives_excellence"             : 3,
+                            "decision-making"               : 2,
+                            "professional_development_plan" : 1
                         }
                     },
                     {
@@ -95,7 +112,7 @@ export class ServerApiService {
                         sectionSubType  : null,
                         sectionVersion  : 1,
                         signatures      : null,
-                        employeeAgrees  : true
+                        employeeAgrees  : false
                     }
                 ]
             } 

@@ -6,13 +6,13 @@
             <p class="text-left"><span style="color: red">*</span>Employee Name:</p>
         </div>
         <div class="col-md-4">
-            <input type="text">
+            <input type="text" [(ngModel)]="section.name">
         </div>
         <div class="col-md-2">
             <p class="text-left"><span style="color: red">*</span>Employee SAP#:</p>
         </div>
         <div class="col-md-4">
-            <input type="text">
+            <input type="text" [(ngModel)]="section.employeeSAPNumber">
         </div>
     </div>
 
@@ -22,13 +22,13 @@
             <p class="text-left"><span style="color: red">*</span>Title:</p>
         </div>
         <div class="col-md-4">
-            <input type="text">
+            <input type="text" [(ngModel)]="section.title">
         </div>
         <div class="col-md-2">
             <p class="text-left"><span style="color: red">*</span>Reporting Period:</p>
         </div>
         <div class="col-md-4">
-            <input type="text">
+            <input type="text" [(ngModel)]="section.reportingPeriod">
         </div>
     </div>
 
@@ -38,17 +38,15 @@
             <p class="text-left"><span style="color: red">*</span>Department:</p>
         </div>
         <div class="col-md-4">
-            <select class="selectpicker w-75">
-                <option>Department 1</option>
-                <option>Department 2</option>
-                <option>Department 3</option>
+            <select class="selectpicker w-75" [(ngModel)]="section.department">
+                <option *ngFor="let department of departments" [ngValue]="departments">{{department}}</option>
             </select>
         </div>
         <div class="col-md-2">
             <p class="text-left"><span style="color: red">*</span>Division:</p>
         </div>
         <div class="col-md-4">
-            <input type="text">               
+            <input type="text" [(ngModel)]="section.division">               
         </div>
     </div>
 
@@ -58,8 +56,25 @@
             <p class="text-left"><span style="color: red">*</span>Review Type:</p>
         </div>
         <div class="col-md-4">
-            <label class="radio-inline"style="padding-right:30px;"><input type="radio" name="input-radio-reviewType">Planning</label>
-            <label class="radio-inline" ><input type="radio" name="input-radio-reviewType">Annual</label>
+            <label 
+                class="radio-inline"
+                style="padding-right:30px;" >
+                <input 
+                    type="radio" 
+                    name="input-radio-reviewType" 
+                    [checked]="section.reviewType === 'planning'" 
+                    (change)="section.reviewType = 'planning'" > 
+                Planning 
+            </label>
+            <label 
+                class="radio-inline" >
+                <input 
+                    type="radio" 
+                    name="input-radio-reviewType" 
+                    [checked]="section.reviewType === 'annual'" 
+                    (change)="section.reviewType = 'annual'" >
+                Annual
+            </label>
         </div>
     </div>
 
@@ -69,8 +84,24 @@
             <p class="text-left"><span style="color: red">*</span>Supervisor or Above?</p>
         </div>
         <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="input-radio-supervisorOrAbove">Yes</label>
-            <label class="radio-inline"><input type="radio" name="input-radio-supervisorOrAbove">No</label>
+            <label 
+                class="radio-inline">
+                <input 
+                    type="radio" 
+                    name="input-radio-supervisorOrAbove"
+                    [checked]="section.isSupervisorOrAbove" 
+                    (change)="section.isSupervisorOrAbove = true">
+                    Yes
+                </label>
+            <label 
+                class="radio-inline">
+                <input 
+                    type="radio" 
+                    name="input-radio-supervisorOrAbove"
+                    [checked]="!section.isSupervisorOrAbove" 
+                    (change)="section.isSupervisorOrAbove = false">
+                No
+            </label>
         </div>
     </div>
 
