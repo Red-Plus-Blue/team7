@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Section } from '../server-objects/section'
+import { CommentsSection } from '../server-objects/sections/comments-section'
 
 @Component({
   selector: 'app-section-comments',
@@ -10,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionCommentsComponent implements OnInit {
 
-  constructor() { }
+    @Input() inputSection: Section;
+    section : CommentsSection;
 
-  ngOnInit() {
-  }
+    constructor() {
+        
+    }
+
+    ngOnInit() {
+        this.section = this.inputSection as CommentsSection;
+        console.log(this.section.employeeComments);
+    }
 
 }

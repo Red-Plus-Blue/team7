@@ -44,14 +44,14 @@
 
         <div *ngFor="let section of form.sections">
             <ng-container [ngSwitch]="section?.sectionType">
-                <app-section-employee-information           *ngSwitchCase="'employee_information'"></app-section-employee-information>
-                <app-section-responsibilities-and-goals     *ngSwitchCase="'responsibilities_and_goals'"></app-section-responsibilities-and-goals>
-                <app-section-core-values                    *ngSwitchCase="'core_values'"></app-section-core-values>
-                <app-section-leadership-assessment          *ngSwitchCase="'leadership_assessment'"></app-section-leadership-assessment>
-                <app-section-professional-development-plan  *ngSwitchCase="'professional_development_plan'"></app-section-professional-development-plan>
-                <app-section-narrative-summary              *ngSwitchCase="'narrative_summary'"></app-section-narrative-summary>
-                <app-section-comments                       *ngSwitchCase="'comments'"></app-section-comments>
-                <app-section-signatures                     *ngSwitchCase="'signatures'"></app-section-signatures>
+                <app-section-employee-information           *ngSwitchCase="'employee_information'" [inputSection]="section"></app-section-employee-information>
+                <app-section-responsibilities-and-goals     *ngSwitchCase="'responsibilities_and_goals'" [inputSection]="section"></app-section-responsibilities-and-goals>
+                <app-section-core-values                    *ngSwitchCase="'core_values'" [inputSection]="section"></app-section-core-values>
+                <app-section-leadership-assessment          *ngSwitchCase="'leadership_assessment'" [inputSection]="section"></app-section-leadership-assessment>
+                <app-section-professional-development-plan  *ngSwitchCase="'professional_development_plan'" [inputSection]="section"></app-section-professional-development-plan>
+                <app-section-narrative-summary              *ngSwitchCase="'narrative_summary'" [inputSection]="section"></app-section-narrative-summary>
+                <app-section-comments                       *ngSwitchCase="'comments'" [inputSection]="section"></app-section-comments>
+                <app-section-signatures                     *ngSwitchCase="'signatures'" [inputSection]="section"></app-section-signatures>
                 <div *ngSwitchDefault>Failed to read section</div>
             </ng-container>
         </div>

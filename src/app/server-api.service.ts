@@ -36,44 +36,66 @@ export class ServerApiService {
                 formVersion : 1,
                 sections    : [
                     {
-                        sectionType     : "employee_information",
-                        sectionSubType  : null,
-                        sectionVersion  : 1
+                        sectionType         : "employee_information",
+                        sectionSubType      : null,
+                        sectionVersion      : 1,
+                        employeeName        : "John Doe",
+                        employeeSAPNumber   : "123456789",
+                        department          : "Example Department",
+                        raterName           : "Jane Doe",
+                        raterSAPNumber      : "987654321"
                     },
                     {
                         sectionType     : "responsibilities_and_goals",
                         sectionSubType  : null,
-                        sectionVersion  : 1
+                        sectionVersion  : 1,
+                        goals           : null
                     },
                     {
                         sectionType     : "core_values",
                         sectionSubType  : null,
-                        sectionVersion  : 1
+                        sectionVersion  : 1,
+                        ratings         : {
+                            "rating 1" : 1,
+                            "rating 2" : 2,
+                            "rating 3" : 3,
+                        }
                     },
                     {
                         sectionType     : "leadership_assessment",
                         sectionSubType  : null,
-                        sectionVersion  : 1
+                        sectionVersion  : 1,
+                        ratings         : {
+                            "rating 1" : 1,
+                            "rating 2" : 2,
+                            "rating 3" : 3,
+                        }
                     },
                     {
                         sectionType     : "professional_development_plan",
                         sectionSubType  : null,
-                        sectionVersion  : 1
+                        sectionVersion  : 1,
+                        goals           : null
                     },
                     {
                         sectionType     : "narrative_summary",
                         sectionSubType  : null,
-                        sectionVersion  : 1
+                        sectionVersion  : 1,
+                        summary         : "A summary of employee performance"
                     },
                     {
                         sectionType     : "comments",
                         sectionSubType  : null,
-                        sectionVersion  : 1
+                        sectionVersion  : 1,
+                        reviewerComments : "Comments from the reviewer",
+                        employeeComments : "Comments from the employee"
                     },
                     {
                         sectionType     : "signatures",
                         sectionSubType  : null,
-                        sectionVersion  : 1
+                        sectionVersion  : 1,
+                        signatures      : null,
+                        employeeAgrees  : true
                     }
                 ]
             } 

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProfessionalDevelopmentPlanSection } from '../server-objects/sections/porfessional-development-plan-section';
+import { Section } from '../server-objects/section';
 
 @Component({
   selector: 'app-section-professional-development-plan',
@@ -10,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionProfessionalDevelopmentPlanComponent implements OnInit {
 
-  constructor() { }
+    section : ProfessionalDevelopmentPlanSection;
+    @Input() inputSection : Section;
 
-  ngOnInit() {
-  }
+    constructor() { }
+
+    ngOnInit() {
+        this.section = this.inputSection as ProfessionalDevelopmentPlanSection;
+        console.log(this.section.goals);
+    }
 
 }

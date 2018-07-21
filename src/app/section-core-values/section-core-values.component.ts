@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CoreValuesSection } from '../server-objects/sections/core-values-section';
+import { Section } from '../server-objects/section';
 
 @Component({
   selector: 'app-section-core-values',
@@ -10,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionCoreValuesComponent implements OnInit {
 
-  constructor() { }
+    section : CoreValuesSection;
+    @Input() inputSection : Section;
 
-  ngOnInit() {
-  }
+    constructor() { }
+
+    ngOnInit() {
+        this.section = this.inputSection as CoreValuesSection;
+        console.log(this.section.ratings);
+    }
 
 }
