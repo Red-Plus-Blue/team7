@@ -19,6 +19,8 @@ import { SectionProfessionalDevelopmentPlanComponent } from './section-professio
 import { SectionNarrativeSummaryComponent } from './section-narrative-summary/section-narrative-summary.component';
 import { SectionCommentsComponent } from './section-comments/section-comments.component';
 import { SectionSignaturesComponent } from './section-signatures/section-signatures.component';
+import { SectionAppealInformationComponent } from './section-appeal-information/section-appeal-information.component';
+import { SectionWrittenAppealComponent } from './section-written-appeal/section-written-appeal.component';
 
 const appRoutes: Routes = [
     { path: 'login', 
@@ -60,7 +62,9 @@ const appRoutes: Routes = [
         SectionProfessionalDevelopmentPlanComponent,
         SectionNarrativeSummaryComponent,
         SectionCommentsComponent,
-        SectionSignaturesComponent
+        SectionSignaturesComponent,
+        SectionAppealInformationComponent,
+        SectionWrittenAppealComponent
     ],
   imports: [
       FormsModule,

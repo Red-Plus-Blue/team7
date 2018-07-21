@@ -52,6 +52,8 @@
                 <app-section-narrative-summary              *ngSwitchCase="'narrative_summary'" [inputSection]="section"></app-section-narrative-summary>
                 <app-section-comments                       *ngSwitchCase="'comments'" [inputSection]="section"></app-section-comments>
                 <app-section-signatures                     *ngSwitchCase="'signatures'" [inputSection]="section"></app-section-signatures>
+                <app-section-appeal-information             *ngSwitchCase="'appeal_information'" [inputSection]="section" [departments]="departments"></app-section-appeal-information>
+                <app-section-written-appeal                 *ngSwitchCase="'written_appeal'" [inputSection]="section"></app-section-written-appeal>
                 <div *ngSwitchDefault>Failed to read section</div>
             </ng-container>
         </div>
