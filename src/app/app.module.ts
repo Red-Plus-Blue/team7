@@ -14,6 +14,9 @@ import { ScreenMasterFormComponent } from './screen-master-form/screen-master-fo
 import { SectionResponsibilitiesAndGoalsComponent } from './section-responsibilities-and-goals/section-responsibilities-and-goals.component';
 import { SectionEmployeeInformationComponent } from './section-employee-information/section-employee-information.component';
 import { SectionCoreValuesComponent } from './section-core-values/section-core-values.component';
+import { SectionLeadershipAssessmentComponent } from './section-leadership-assessment/section-leadership-assessment.component';
+import { SectionProfessionalDevelopmentPlanComponent } from './section-professional-development-plan/section-professional-development-plan.component';
+import { SectionNarrativeSummaryComponent } from './section-narrative-summary/section-narrative-summary.component';
 
 const appRoutes: Routes = [
     { path: 'login', 
@@ -50,7 +53,10 @@ const appRoutes: Routes = [
         ScreenMasterFormComponent,
         SectionResponsibilitiesAndGoalsComponent,
         SectionEmployeeInformationComponent,
-        SectionCoreValuesComponent
+        SectionCoreValuesComponent,
+        SectionLeadershipAssessmentComponent,
+        SectionProfessionalDevelopmentPlanComponent,
+        SectionNarrativeSummaryComponent
     ],
   imports: [
       FormsModule,
