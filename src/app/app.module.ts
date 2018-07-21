@@ -17,6 +17,8 @@ import { SectionCoreValuesComponent } from './section-core-values/section-core-v
 import { SectionLeadershipAssessmentComponent } from './section-leadership-assessment/section-leadership-assessment.component';
 import { SectionProfessionalDevelopmentPlanComponent } from './section-professional-development-plan/section-professional-development-plan.component';
 import { SectionNarrativeSummaryComponent } from './section-narrative-summary/section-narrative-summary.component';
+import { SectionCommentsComponent } from './section-comments/section-comments.component';
+import { SectionSignaturesComponent } from './section-signatures/section-signatures.component';
 
 const appRoutes: Routes = [
     { path: 'login', 
@@ -56,7 +58,9 @@ const appRoutes: Routes = [
         SectionCoreValuesComponent,
         SectionLeadershipAssessmentComponent,
         SectionProfessionalDevelopmentPlanComponent,
-        SectionNarrativeSummaryComponent
+        SectionNarrativeSummaryComponent,
+        SectionCommentsComponent,
+        SectionSignaturesComponent
     ],
   imports: [
       FormsModule,

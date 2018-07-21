@@ -34,7 +34,48 @@ export class ServerApiService {
                     }
                 },
                 formVersion : 1,
-                sections    : []
+                sections    : [
+                    {
+                        sectionType     : "employee_information",
+                        sectionSubType  : null,
+                        sectionVersion  : 1
+                    },
+                    {
+                        sectionType     : "responsibilities_and_goals",
+                        sectionSubType  : null,
+                        sectionVersion  : 1
+                    },
+                    {
+                        sectionType     : "core_values",
+                        sectionSubType  : null,
+                        sectionVersion  : 1
+                    },
+                    {
+                        sectionType     : "leadership_assessment",
+                        sectionSubType  : null,
+                        sectionVersion  : 1
+                    },
+                    {
+                        sectionType     : "professional_development_plan",
+                        sectionSubType  : null,
+                        sectionVersion  : 1
+                    },
+                    {
+                        sectionType     : "narrative_summary",
+                        sectionSubType  : null,
+                        sectionVersion  : 1
+                    },
+                    {
+                        sectionType     : "comments",
+                        sectionSubType  : null,
+                        sectionVersion  : 1
+                    },
+                    {
+                        sectionType     : "signatures",
+                        sectionSubType  : null,
+                        sectionVersion  : 1
+                    }
+                ]
             } 
         };
     }

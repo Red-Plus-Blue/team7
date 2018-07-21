@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerApiService } from '../server-api.service';
+import { Form } from '../server-objects/form';
 
 
 @Component({
@@ -11,7 +13,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScreenMasterFormComponent implements OnInit {
 
-  constructor() { }
+    form : Form;
 
-  ngOnInit() { }
+    constructor(private serverApi : ServerApiService) { 
+        this.form = serverApi.readForm(1).object;
+    }
+
+    ngOnInit() { }
 }
