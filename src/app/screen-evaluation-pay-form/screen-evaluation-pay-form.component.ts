@@ -9,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class ScreenEvaluationPayFormComponent implements OnInit {
+	public count = 1;
+ 	constructor() { }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  	ngOnInit() {
+  	}
+  	addEntry(value){
+  		value=this.count;
+  		console.log(value)
+  		this.count+=1;
+  		value=this.count;
+  		
+  	}
 }
