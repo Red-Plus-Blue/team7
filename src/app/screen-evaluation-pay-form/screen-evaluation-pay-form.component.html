@@ -8,7 +8,7 @@
         <p style="font-size:18.5px;margin:0;padding:0;line-height:25px;font-weight:bold;">Step Pay Plan</p>
     </div>
 </div>
-<div class="m-3">
+<div class="m-3" ng-controller="mainCtrl">
         <!-- This is the top section of the form -->
         <div class="container border p-3 my-1">
     
@@ -177,10 +177,32 @@
                     <p class="text-left"><span style="font-weight:bold">Responsibilities, Goals, and Measures:</span> Each entry in this table contains 3 items: A description of the responsibility/goal that includes any specific performance metric or project deadline; a summary of the actual performance results; and the rating for this entry.</p>
                 </div>
                     <div class="col-md-1" style="text-align: center">
-                        <button type="button" (click)="addEntry(numEntry.value)" style="width:auto;height:auto;text-align:center" class="btn btn-secondary">Add</button>
+                        <button type="button" ng-click="addEntry()" style="width:auto;height:auto;text-align:center">Add</button>
                 </div>
             </div>
-            <div class="row " style="border:1px solid black;">
+            <div class="row">
+                <table class ="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width:10%">Entry #</th>
+                            <th style="width:6%">Rating</th>
+                            <th style="width:40%">Responsibility/Goal:</th>
+                            <th style="width:40%">Summary of actual performance results:</th>
+                            <th style="width:4%">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr>
+                            <td>Entry</td>
+                            <td><input type="number" onkeydown="return false" style="width: 30px;" min="1" max="3"></td>
+                            <td><textarea class="form-control" id="input-textArea-responsibility" rows="2" ></textarea></td>
+                            <td><textarea class="form-control"  id="input-textArea-responsibility" rows="2" ></textarea></td>
+                            <td><button type="button">X</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<!--             <div class="row " style="border:1px solid black;">
                 <div class="col-md-1 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px"#numEntry>
                     <p class="text-center" style="font-size:16px">Entry: {{count}}</p>
                 </div>
@@ -206,7 +228,7 @@
                     <label for="input-textArea-responsibility">Summary of actual performance results:</label>
                     <textarea class="form-control" id="input-textArea-responsibility" rows="2"></textarea>
                 </div>
-            </div>
+            </div> -->
             
         </div>
         <!-- Section III -->
