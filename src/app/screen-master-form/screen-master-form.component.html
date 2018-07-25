@@ -1,0 +1,79 @@
+<div align="left">
+    <p style="margin:0;padding:0;line-height:5px;"><span style="color: red;">*</span>=Required fields</p>
+</div>
+<div class = "container">
+    <div align="center">
+        <p style="font-size:24px;margin:0;padding:0;line-height:25px;font-weight:bold;">City of San Antonio</p>
+        <p style="font-size:21px;margin:0;padding:0;line-height:25px;font-weight:bold;">Employee Performance Evaluation</p>
+        <p style="font-size:18.5px;margin:0;padding:0;line-height:25px;font-weight:bold;">Step Pay Plan</p>
+    </div>
+</div>
+<div class="m-3">
+        <!--Rating Descriptions-->
+        <div class ="container border p-3 my-1 ">
+            <p class = "text-left" style="font-size:15px;margin:0px;padding-bottom:10px;line-height:0px;font-weight:bold;">Rating Descriptions</p>
+            <div class="row " style="border:1px solid black;">
+                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
+                    <p class="text-center">1-Improvement Needed</p>
+                </div>
+                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
+                    <p class="text-center">2-Achieves Expectations</p>
+                </div>
+                <div class="col-md-3" style="border-right:1px solid black;padding-top: 9px;padding-bottom: 0px">
+                    <p class="text-center">3-Exceptional</p>
+                </div>
+                <div class="col-md-3" style="padding-top: 9px;padding-bottom: 0px">
+                    <p class="text-center">4-Outstanding</p>
+                </div>
+            </div>
+            <div class="row " style="border:1px solid black">
+                <div class="col-md-3" style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
+                    <p class="text-center">Does not meet the requirements of the job, task or project. Improvement is needed.</p>
+                </div>
+                <div class="col-md-3" style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
+                    <p class="text-center">Successfully meets the requirements of the job, task or project. Performance consistently meets standards.</p>
+                </div>
+                <div class="col-md-3" style="border-right:1px solid black;padding-top: 0px;padding-bottom: 0px">
+                    <p class="text-center">Exceeds the requirements of the job, task or project. Performance is characterized by consistent high achievement.</p>
+                </div>
+                <div class="col-md-3" style="padding-top: 0px;padding-bottom: 0px">
+                    <p class="text-center">Far exceeds the requirements of the job, task or project. Performance consistently shows outstanding achievement far above expectations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div *ngFor="let section of form.sections">
+            <ng-container [ngSwitch]="section?.sectionType">
+                <app-section-employee-information           *ngSwitchCase="'employee_information'" [inputSection]="section" [departments]="departments"></app-section-employee-information>
+                <app-section-responsibilities-and-goals     *ngSwitchCase="'responsibilities_and_goals'" [inputSection]="section"></app-section-responsibilities-and-goals>
+                <app-section-core-values                    *ngSwitchCase="'core_values'" [inputSection]="section"></app-section-core-values>
+                <app-section-leadership-assessment          *ngSwitchCase="'leadership_assessment'" [inputSection]="section"></app-section-leadership-assessment>
+                <app-section-professional-development-plan  *ngSwitchCase="'professional_development_plan'" [inputSection]="section"></app-section-professional-development-plan>
+                <app-section-narrative-summary              *ngSwitchCase="'narrative_summary'" [inputSection]="section"></app-section-narrative-summary>
+                <app-section-comments                       *ngSwitchCase="'comments'" [inputSection]="section"></app-section-comments>
+                <app-section-signatures                     *ngSwitchCase="'signatures'" [inputSection]="section"></app-section-signatures>
+                <app-section-appeal-information             *ngSwitchCase="'appeal_information'" [inputSection]="section" [departments]="departments"></app-section-appeal-information>
+                <app-section-written-appeal                 *ngSwitchCase="'written_appeal'" [inputSection]="section"></app-section-written-appeal>
+                <div *ngSwitchDefault>Failed to read section</div>
+            </ng-container>
+        </div>
+        <!-- Agree or Disagree -->
+        <div class ="container border p-3 my-1 ">
+            <div class="row" style="border:1px solid black;">
+                <div class="col-md-2" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
+                    <p class="text-left">4-Outstanding<br>3-Exceeds Expectations<br>2-Achieves Expectations<br>1-Improvement Needed</p>
+                </div>
+                <div class="col-md-2" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
+                    <p style="text-align: center;">Overall Rating</p>
+                    <p style="font-size:50px;text-align:center">3</p>
+                </div>
+                <div class="col-md-2" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
+                    <label class="agree-disagree-label"style="padding-right:30px;"><input type="radio" name="agree-disagree-input">Agreee with Rating</label>
+                    <label class="agree-disagree-label" ><input type="radio" name="agree-disagree-input">Disagree with Rating</label>
+                </div>
+                <div class="col-md-6" style="padding-top:2px;padding-bottom:0px">
+                    <p style="font-size:12px;font-weight:bold">• Signing your performance evaluation acknowledges the evaluation has been discussed with you.<br>• If you disagree with the overall rating, you may submit an appeal in writing to the Reviewer listed above, using the Appeal Form found on FormsNet.<br>• Appeal must be received by the Reviewing Officer within ten (10) working days beginning the day after the employee receives this evaluation or when a witness signs that the employee received this evaluation.</p>
+                </div>
+            </div>
+        </div>
+</div>
