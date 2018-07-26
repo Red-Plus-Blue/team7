@@ -1,39 +1,99 @@
+        <!--Rating Descriptions-->
+        <div class ="container border p-3 my-1 ">
+            <p class = "text-left" style="font-size:15px;margin:0px;padding-bottom:10px;line-height:0px;font-weight:bold;">Rating Descriptions</p>
+            <div class="row " style="border:1px solid black;">
+                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
+                    <p class="text-center">1-Improvement Needed</p>
+                </div>
+                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
+                    <p class="text-center">2-Achieves Expectations</p>
+                </div>
+                <div class="col-md-3" style="border-right:1px solid black;padding-top: 9px;padding-bottom: 0px">
+                    <p class="text-center">3-Exceptional</p>
+                </div>
+                <div class="col-md-3" style="padding-top: 9px;padding-bottom: 0px">
+                    <p class="text-center">4-Outstanding</p>
+                </div>
+            </div>
+            <div class="row " style="border:1px solid black">
+                <div class="col-md-3" style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
+                    <p class="text-center">Does not meet the requirements of the job, task or project. Improvement is needed.</p>
+                </div>
+                <div class="col-md-3" style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
+                    <p class="text-center">Successfully meets the requirements of the job, task or project. Performance consistently meets standards.</p>
+                </div>
+                <div class="col-md-3" style="border-right:1px solid black;padding-top: 0px;padding-bottom: 0px">
+                    <p class="text-center">Exceeds the requirements of the job, task or project. Performance is characterized by consistent high achievement.</p>
+                </div>
+                <div class="col-md-3" style="padding-top: 0px;padding-bottom: 0px">
+                    <p class="text-center">Far exceeds the requirements of the job, task or project. Performance consistently shows outstanding achievement far above expectations.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        
 <div class ="container border p-3 my-1 ">
     <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section I: Responsibilities, Goals, and Measures <span style="font-size: 14px;font-weight: normal;">(70% of overall rating; equally weighted)</span></p>
-    <div class="row" style="border:1px solid black;height:47px;">
-        <div class="col-md-11" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
+    <div class="row" style="border:1px solid black;">
+        <div class="col-md-12" style="padding-top:2px;padding-bottom:0px">
             <p class="text-left"><span style="font-weight:bold">Responsibilities, Goals, and Measures:</span> Each entry in this table contains 3 items: A description of the responsibility/goal that includes any specific performance metric or project deadline; a summary of the actual performance results; and the rating for this entry.</p>
+            <p class="text-left" style="font-weight:bold">Item Evaluation Weight Percentage (total of all weights must equal 100%).</p>
         </div>
-            <div class="col-md-1" style="padding-top: 2px;padding-bottom: 0px">
-                <button type="button" class="btn btn-secondary">Add</button>
-        </div>
-    </div>
-    <div class="row " style="border:1px solid black;">
-        <div class="col-md-1 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-            <p class="text-center" style="font-size:16px">Entry: 1</p>
-        </div>
-        <div class="col-md-8 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-            <label style="padding-right: 15px">Item Evaluation Weight Percentage (total of all weights=100%):</label>
-            <input class="number" style="width: 40px;"type="text">
-        </div>
-        <div class="col-md-2" style="border-right:1px solid black;padding-top: 9px;padding-bottom: 0px">
-            <label style="padding-right: 15px">Rating:</label>
-            <input class="number" style="width: 30px;"type="text">
-        </div>
-        <div class="col-md-1" style="padding-top: 5px;padding-bottom: 2px">
-            <button type="button" class="btn btn-danger">Delete</button>
-        </div>
-    </div> 
-    <div class="row " style="border:1px solid black;">
-        <div class="col-md-12 form-group">
-            <label for="input-textArea-responsibility">Responsibility/Goal:</label>
-            <textarea class="form-control" id="input-textArea-responsibility" rows="2"></textarea>
-        </div>
-    </div> 
-    <div class="row " style="border:1px solid black;">
-        <div class="col-md-12 form-group">
-            <label for="input-textArea-responsibility">Summary of actual performance results:</label>
-            <textarea class="form-control" id="input-textArea-responsibility" rows="2"></textarea>
+        <div class="col-md-1" style="padding-top: 2px;padding-bottom: 0px">
         </div>
     </div>
+            <div class="row">
+                <table class="table table-striped table-bordered" >
+                    <thead>
+                        <tr>
+                            <th style="width:8%">Entry #</th>
+                            <th style="width:8">Weight %</th>
+                            <th style="width:6%">Rating</th>
+                            <th style="width:37%">Responsibility/Goal:</th>
+                            <th style="width:37%">Summary of actual performance results:</th>
+                            <th style="width:4%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let entry of entArray; let i = index">
+                            <td [(ngModel)]="entry.count" name="{{entry.count}}">Entry: {{i+1}} </td>
+                            <td>
+                                <input [(ngModel)]="entry.weight" class="form-control" type="number" style="width: 80px;" name="{{entry.weight}}" />
+                            </td>     
+                            <td>
+                                <input [(ngModel)]="entry.rating" class="form-control" type="number" onkeydown="return false" style="width: 60px;" min="1" max="3" name="{{entry.rating}}" />
+                            </td>
+                            <td>
+                                <textarea [(ngModel)]="entry.goal" class="form-control" rows="2" name="{{entry.goal}}" ></textarea>
+                            </td>
+                            <td>
+                                <textarea [(ngModel)]="entry.summary" class="form-control" rows="2" name="{{entry.summary}}" ></textarea>
+                            </td>
+                            <td>
+                                <button class="btn btn-default"  type="button" (click)="deleteEntry(i)">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="newentryCount" [(ngModel)]="newentry.count" name="newentryCount">Entry</td>
+                            <td>
+                                <input class="form-control" type="number" style="width: 60px;"  id="newentryWeight" [(ngModel)]="newentry.weight" name="newentryWeight" />
+                            </td>    
+                            <td>
+                                <input class="form-control" type="number" onkeydown="return false" style="width: 50px;" min="1" max="3" id="newentryRating" [(ngModel)]="newentry.rating" name="newentryRating" />
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="2" id="newentryGoal" [(ngModel)]="newentry.goal" name="newentryGoal" ></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" rows="2" id="newentrySummary" [(ngModel)]="newentry.summary" name="newentrySummary" ></textarea>
+                            </td>
+                            <td>
+                                <button class="btn btn-default" type="button" (click)="addEntry()">Add</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 </div>

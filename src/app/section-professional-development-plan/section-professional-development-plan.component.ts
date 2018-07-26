@@ -21,5 +21,15 @@ export class SectionProfessionalDevelopmentPlanComponent implements OnInit {
         this.section = this.inputSection as ProfessionalDevelopmentPlanSection;
         console.log(this.section.goals);
     }
+    private goalArray: Array<any> = [];
+    private newgoal: any = {};
+    addGoal() {
+        this.goalArray.push(this.newgoal)
+        this.newgoal = {};
+    }
+
+    deleteGoal(index) {
+        this.goalArray.splice(index, 1);
+    }
 
 }

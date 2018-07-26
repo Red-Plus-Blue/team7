@@ -21,5 +21,15 @@ export class SectionResponsibilitiesAndGoalsComponent implements OnInit {
         this.section = this.inputSection as ResponsibilitiesAndGoalsSection;
         console.log(this.section.goals);
     }
+    private entArray: Array<any> = [];
+    private newentry: any = {};
+    addEntry() {
+        this.entArray.push(this.newentry)
+        this.newentry = {};
+    }
+
+    deleteEntry(index) {
+        this.entArray.splice(index, 1);
+    }
 
 }

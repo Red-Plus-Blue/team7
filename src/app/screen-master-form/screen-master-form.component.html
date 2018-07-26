@@ -9,39 +9,6 @@
     </div>
 </div>
 <div class="m-3">
-        <!--Rating Descriptions-->
-        <div class ="container border p-3 my-1 ">
-            <p class = "text-left" style="font-size:15px;margin:0px;padding-bottom:10px;line-height:0px;font-weight:bold;">Rating Descriptions</p>
-            <div class="row " style="border:1px solid black;">
-                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-center">1-Improvement Needed</p>
-                </div>
-                <div class="col-md-3 " style="border-right:1px solid black;padding-top:9px;padding-bottom:0px">
-                    <p class="text-center">2-Achieves Expectations</p>
-                </div>
-                <div class="col-md-3" style="border-right:1px solid black;padding-top: 9px;padding-bottom: 0px">
-                    <p class="text-center">3-Exceptional</p>
-                </div>
-                <div class="col-md-3" style="padding-top: 9px;padding-bottom: 0px">
-                    <p class="text-center">4-Outstanding</p>
-                </div>
-            </div>
-            <div class="row " style="border:1px solid black">
-                <div class="col-md-3" style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
-                    <p class="text-center">Does not meet the requirements of the job, task or project. Improvement is needed.</p>
-                </div>
-                <div class="col-md-3" style="border-right:1px solid black;padding-top:0px;padding-bottom:0px">
-                    <p class="text-center">Successfully meets the requirements of the job, task or project. Performance consistently meets standards.</p>
-                </div>
-                <div class="col-md-3" style="border-right:1px solid black;padding-top: 0px;padding-bottom: 0px">
-                    <p class="text-center">Exceeds the requirements of the job, task or project. Performance is characterized by consistent high achievement.</p>
-                </div>
-                <div class="col-md-3" style="padding-top: 0px;padding-bottom: 0px">
-                    <p class="text-center">Far exceeds the requirements of the job, task or project. Performance consistently shows outstanding achievement far above expectations.</p>
-                </div>
-            </div>
-        </div>
-
         <div *ngFor="let section of form.sections">
             <ng-container [ngSwitch]="section?.sectionType">
                 <app-section-employee-information           *ngSwitchCase="'employee_information'" [inputSection]="section" [departments]="departments"></app-section-employee-information>
