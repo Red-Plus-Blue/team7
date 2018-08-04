@@ -3,14 +3,15 @@
     <div>
         <div class="form-group">
             <label for="username">SAP #:</label>
-            <input type="text" class="form-control" name="username" />
+            <input type="text" class="form-control" name="username" [(ngModel)]="username"/>
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" class="form-control" name="password" />
+            <input type="password" class="form-control" name="password" [(ngModel)]="password"/>
         </div>
         <div>
             <button class="btn btn-primary" (click)="buttonLogin()">Login</button>
         </div>
+        <label ng-show="loginErrorMessage != null" style="color:red">{{loginErrorMessage}}</label>
     </div>
 </div>

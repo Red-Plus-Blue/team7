@@ -1,18 +1,24 @@
 import { Injectable }       from '@angular/core';
-import { Form }             from './server-objects/form'
-import { FormSummary }      from './server-objects/form-summary' 
-import { FormState }        from './server-objects/form-state' 
-import { ServerResponse }   from './server-objects/server-response'
-import { User }             from './server-objects/user'
+import { Form }             from './server-objects/form';
+import { FormSummary }      from './server-objects/form-summary';
+import { FormState }        from './server-objects/form-state';
+import { ServerResponse }   from './server-objects/server-response';
+import { User }             from './server-objects/user';
+import { HttpClient, HttpHeaders }       from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ServerApiService {
 
-    constructor() { }
+    protected port : string = "8001";
+    protected url : string = "http://localhost:" + this.port;
+    protected authenticationEndpoint : string = this.url + "/authentication";
 
-    getDepartmentList() : ServerResponse<String[]> {
+    constructor(private http: HttpClient) { }
+
+    getDepartmentList() : ServerResponse {
         return {
             error : null,
             object : [
@@ -24,42 +30,50 @@ export class ServerApiService {
         }
     }
 
-    createForm(formSummary : FormSummary) : ServerResponse<FormSummary> {
+    createForm(formSummary : FormSummary) : ServerResponse {
         return { error : null, object : null };
     }
 
-    readForm(id : number) : ServerResponse<Form> {
+    readForm(id : number) : ServerResponse {
         return { 
             error   : null,
             object  : this.temp_stepPayForm()
         };
     }
 
-    editForm(id : number, form : Form) : ServerResponse<Form> {
+    editForm(id : number, form : Form) : ServerResponse {
         return { error : null, object : null };
     }
 
-    deleteForm(id : number) : ServerResponse<void> {
+    deleteForm(id : number) : ServerResponse {
         return { error : null, object : null };
     }
 
-    listForms() : ServerResponse<Form[]> {
+    listForms() : ServerResponse {
         return { error : null, object : null };
     }
 
-    submitForm(id : number) : ServerResponse<void> {
+    submitForm(id : number) : ServerResponse {
         return { error : null, object : null };
     }
 
-    signForm(id : number, text : string) : ServerResponse<void> {
+    signForm(id : number, text : string) : ServerResponse {
         return { error : null, object : null };
     }
 
-    login(username : string, password : string) : ServerResponse<string> {
-        return { error : null, object : null };
+    login(username : string, password : string) : Observable<Object> {
+
+        let headers = new HttpHeaders({
+            'Access-Control-Allow-Origin': '*',
+            'Authorization': 'Basic ' + username + ':' + password
+        });
+
+        return this.http.get(this.authenticationEndpoint, {
+            headers: headers
+        });
     }
 
-    getLoggedInUser() : ServerResponse<User> {
+    getLoggedInUser() : ServerResponse {
         return { error : null, object : null };
     }
 

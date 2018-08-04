@@ -1,9 +1,6 @@
 
 
 export interface ServerError {
-
-    type            : String;
-    message         : String;
-    nextedErrors    : ServerError[]
-
+    errorMessage    : string;
+    nestedError     : ServerError;
 }

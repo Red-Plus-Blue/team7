@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServerApiService } from '../server-api.service';
+import { ServerResponse } from '../server-objects/server-response';
 
 @Component({
   selector: 'app-screen-login',
@@ -12,8 +14,13 @@ import { Router } from '@angular/router';
 export class ScreenLoginComponent implements OnInit {
 
     protected router : Router;
+    
+    private username : string = "";
+    private password : string = "";
 
-  constructor(router : Router) { 
+    private loginErrorMessage : string;
+
+  constructor(router : Router, private serverApi : ServerApiService) { 
       this.router = router;
   }
 
@@ -21,6 +28,29 @@ export class ScreenLoginComponent implements OnInit {
   }
 
   buttonLogin() : void {
-      this.router.navigateByUrl('/evaluation');
+
+        this.serverApi.login(this.username, this.password).subscribe(
+            (response: ServerResponse) => {
+                if(response.object != null) {
+                    this.router.navigateByUrl('/evaluation');
+                } else { 
+                    this.loginFailed(null);
+                }
+            },
+            (error) => {
+                let response = <ServerResponse>error.error;
+                this.loginFailed(response.error.errorMessage);
+            }
+        );
+
+  }
+
+  loginFailed(error: string) : void {
+    if(error == null || error == undefined) {
+        error = "An unkown error occured while logging in.";
+    }
+
+    this.password = "";
+    this.loginErrorMessage = error;
   }
 }

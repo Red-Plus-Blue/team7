@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ScreenLoginComponent } from './screen-login/screen-login.component';
@@ -72,7 +73,8 @@ const appRoutes: Routes = [
           appRoutes,
           { enableTracing: true }
         ),
-        BrowserModule
+        BrowserModule,
+        HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
