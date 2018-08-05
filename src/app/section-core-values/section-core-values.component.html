@@ -1,6 +1,6 @@
 <div class ="container border p-3 my-1 ">
     <p style="font-size:13px">Sections II and III (if applicable) combine to provide 30% of overall rating; equally weighted<br><br></p>
-    <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section II: CORE Values</p>
+    <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section {{sectionNumberInRomanNumerals}}: CORE Values</p>
     <div class="row" style="border:1px solid black;height:25px;">
         <div class="col-md-11" style="border-right:1px solid black;padding-top:2px;padding-bottom:0px">
             <p class="text-left">Indicate the Employee's performance level by assigning a rating for each CORE Value.</p>
@@ -17,7 +17,7 @@
             <p class="text-left"><span style="font-weight:bold;font-size:17px">We work together to make San Antonio better.</span><br>We share goals and hold ourselves and each other accountable. We take ownership of the team's work and personally commit to finding solutions. We communicate effectively by sharing information, skills, and knowledge to achieve success. We reach across teams for better outcomes. We support the growth and development of all members of the team. We share and celebrate success by valuing and recognizing each contribution.</p>
         </div>
         <div class="col-md-1" style="padding-top: 9px;padding-bottom: 0px">
-            <br><br><input class="center-block" style="width: 30px;"type="text" [(ngModel)]="section.ratings['teamwork']">
+            <br><br><input class="center-block" style="width: 30px;"type="text" [(ngModel)]="section.coreValues['teamwork']">
         </div>
     </div>
     <div class="row " style="border:1px solid black;">
@@ -28,7 +28,7 @@
             <p class="text-left"><span style="font-weight:bold;font-size:17px">We model ethical behavior.</span><br>We do the right thing, always. We appropriately question actions inconsistent with our CORE Values. We make honesty and transparency the foundation for all actions. We are accountable at all levels. We avoid the appearance of impropriety.</p>
         </div>
         <div class="col-md-1" style="padding-top: 9px;padding-bottom: 0px">
-            <br><input class="center-block" style="width: 30px;"type="text" [(ngModel)]="section.ratings['integrity']">
+            <br><input class="center-block" style="width: 30px;"type="text" [(ngModel)]="section.coreValues['integrity']">
         </div>
     </div>
     <div class="row " style="border:1px solid black;">
@@ -39,7 +39,7 @@
             <p class="text-left"><span style="font-weight:bold;font-size:17px">We are driven by continuous improvement.</span><br>We find ways to make things better. We optimize results by working smarter. We are empowered to take risks, learn and grow. We learn from our failures and our successes. We continually re-imagine operational processes for better results.</p>
         </div>
         <div class="col-md-1" style="padding-top: 9px;padding-bottom: 0px">
-            <br><input class="center-block" style="width: 30px;"type="text" [(ngModel)]="section.ratings['innovation']">
+            <br><input class="center-block" style="width: 30px;"type="text" [(ngModel)]="section.coreValues['innovation']">
         </div>
     </div>
     <div class="row " style="border:1px solid black;">
@@ -50,7 +50,7 @@
             <p class="text-left"><span style="font-weight:bold;font-size:17px">We are qualified, skilled and committed.</span><br>We personally commit to continuous improvement and personal growth. We take pride in producing high-quality work and in delivering exceptional service to internal and external customers. We exhibit pride in professional appearance, language and behavior. We assume responsibility for a clean and safe work area. We maintain composure in challenging situations. We respect others, express sincere appreciation, and positively influence those around us. We are dedicated ambassadors for the City of San Antonio and the community.</p>
         </div>
         <div class="col-md-1" style="padding-top: 9px;padding-bottom: 0px">
-            <br><br><input class="center-block" style="width: 30px;"type="text" [(ngModel)]="section.ratings['professionalism']">
+            <br><br><input class="center-block" style="width: 30px;"type="text" [(ngModel)]="section.coreValues['professionalism']">
         </div>
     </div>
 </div>

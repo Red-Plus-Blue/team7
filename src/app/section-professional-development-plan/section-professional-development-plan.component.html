@@ -1,5 +1,5 @@
 <div class ="container border p-3 my-1 ">
-    <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section IV: Professional Development Plan</p>
+    <p class = "text-left" style="font-size:18px;margin-top:15px;padding-bottom:0px;line-height:0px;font-weight:bold;">Section {{sectionNumberInRomanNumerals}}: Professional Development Plan</p>
     <div class="row" style="border:1px solid black;">
         <div class="col-md-12" style="padding-top:2px;padding-bottom:0px">
             <p class="text-left"><span style="font-weight:bold"> Goals and Milestones:</span>List specific goals for Professional Development the Employee will achieve over the next twelve (12) months, and the time frame or target completion date for each objective. (Limit entries to one (1) objective per row.)</p>
@@ -7,42 +7,33 @@
             <div class="col-md-1" style="padding-top: 2px;padding-bottom: 0px">
         </div>
     </div>
-            <div class="row">
-                <table class="table table-striped table-bordered" >
-                    <thead>
-                        <tr>
-                            <th style="width:8%">Goal #</th>
-                            <th style="width:37%">Time Frame or Target completion Date:</th>
-                            <th style="width:37%">Goals and Milestone Descriptions:</th>
-                            <th style="width:4%">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let goal of goalArray; let i = index">
-                            <td [(ngModel)]="goal.count" name="{{goal.count}}">Goal: {{i+1}} </td>
-                            <td>
-                                <textarea [(ngModel)]="goal.goal" class="form-control" rows="2" name="{{goal.goal}}" ></textarea>
-                            </td>
-                            <td>
-                                <textarea [(ngModel)]="goal.summary" class="form-control" rows="2" name="{{goal.summary}}" ></textarea>
-                            </td>
-                            <td>
-                                <button class="btn btn-default"  type="button" (click)="deleteGoal(i)">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="newgoalCount" [(ngModel)]="newgoal.count" name="newgoalCount">Goal</td>
-                            <td>
-                                <textarea class="form-control" rows="2" id="newgoalGoal" [(ngModel)]="newgoal.goal" name="newgoalGoal" ></textarea>
-                            </td>
-                            <td>
-                                <textarea class="form-control" rows="2" id="newgoalSummary" [(ngModel)]="newgoal.summary" name="newgoalSummary" ></textarea>
-                            </td>
-                            <td>
-                                <button class="btn btn-default" type="button" (click)="addGoal()">Add</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="row">
+            <table class="table table-striped table-bordered" >
+                <thead>
+                    <tr>
+                        <th style="width:8%">Goal #</th>
+                        <th style="width:37%">Time Frame or Target completion Date:</th>
+                        <th style="width:37%">Goals and Milestone Descriptions:</th>
+                        <th style="width:4%">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let goal of section.goals; let i = index">
+                        <td>
+                            <p>{{goal.goalNumber}}</p>   
+                        </td>
+                        <td>
+                            <textarea rows="2">{{goal.description}}</textarea>
+                        </td>
+                        <td>
+                            <textarea rows="2">{{goal.timeFrame}}</textarea>
+                        </td>
+                        <td>
+                            <button [hidden]="(section.goals.length == 1)" class="btn btn-default"  type="button" (click)="deleteGoal(goal.goalNumber)">Delete</button>
+                            <button [hidden]="(i < (section.goals.length - 1)) && (section.goals.length > 1)" class="btn btn-default"  type="button" (click)="addGoal()">Add</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 </div>

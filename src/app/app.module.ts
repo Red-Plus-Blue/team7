@@ -22,13 +22,17 @@ import { SectionCommentsComponent } from './section-comments/section-comments.co
 import { SectionSignaturesComponent } from './section-signatures/section-signatures.component';
 import { SectionAppealInformationComponent } from './section-appeal-information/section-appeal-information.component';
 import { SectionWrittenAppealComponent } from './section-written-appeal/section-written-appeal.component';
+import { ScreenDashboardComponent } from './screen-dashboard/screen-dashboard.component';
+import { DashboardReviewComponent } from './dashboard-review/dashboard-review.component';
+import { DashboardCreateComponent } from './dashboard-create/dashboard-create.component';
+import { DashboardEditComponent } from './dashboard-edit/dashboard-edit.component';
 
 const appRoutes: Routes = [
     { path: 'login', 
         component: ScreenLoginComponent 
     },
     { path: 'pay', 
-        component: ScreenEvaluationPayFormComponent 
+        component: ScreenEvaluationPayFormComponent
     },
     { path: 'evaluation',
         component: ScreenEvaluationFormComponent,
@@ -38,6 +42,9 @@ const appRoutes: Routes = [
     },
     { path: 'master',
         component: ScreenMasterFormComponent,
+    },
+    { path: 'dashboard',
+        component: ScreenDashboardComponent,
     },
     { path: '',
     redirectTo: '/login',
@@ -65,7 +72,11 @@ const appRoutes: Routes = [
         SectionCommentsComponent,
         SectionSignaturesComponent,
         SectionAppealInformationComponent,
-        SectionWrittenAppealComponent
+        SectionWrittenAppealComponent,
+        ScreenDashboardComponent,
+        DashboardReviewComponent,
+        DashboardCreateComponent,
+        DashboardEditComponent
     ],
   imports: [
       FormsModule,

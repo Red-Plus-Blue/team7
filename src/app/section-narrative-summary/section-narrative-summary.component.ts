@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NarrativeSummarySection } from '../server-objects/sections/narrative-summary-section';
 import { Section } from '../server-objects/section';
+import { RomanNumeralConverter } from '../util/roman-numeral-conversion';
+
 
 @Component({
   selector: 'app-section-narrative-summary',
@@ -14,6 +16,9 @@ export class SectionNarrativeSummaryComponent implements OnInit {
 
     section : NarrativeSummarySection;
     @Input() inputSection : Section;
+    @Input() sectionNumber : number;
+    protected sectionNumberInRomanNumerals : string = "I";
+
 
     constructor() { }
 

@@ -14,9 +14,25 @@ export class ServerApiService {
 
     protected port : string = "8001";
     protected url : string = "http://localhost:" + this.port;
-    protected authenticationEndpoint : string = this.url + "/authentication";
+
+    protected authenticationEndpoint    : string = this.url + "/authentication";
+    protected userMeEndpoint            : string = this.url + "/user/me";
+    protected formListEndpoint          : string = this.url + "/form/list";
+    protected formEndpoint              : string = this.url + "/form";
+
+    protected token: string;
+    protected user: User;
+    protected form: Form;
 
     constructor(private http: HttpClient) { }
+
+    setForm(form: Form) { this.form = form; }
+    getForm() : Form { return this.form; }
+
+    setToken(token: string) { this.token = token; }
+
+    setUser(user: User) { this.user = user; }
+    getUser() { return this.user; }
 
     getDepartmentList() : ServerResponse {
         return {
@@ -34,11 +50,14 @@ export class ServerApiService {
         return { error : null, object : null };
     }
 
-    readForm(id : number) : ServerResponse {
-        return { 
-            error   : null,
-            object  : this.temp_stepPayForm()
-        };
+    readForm(id : number) : Observable<Object> {
+        let headers = new HttpHeaders({
+            'Authorization': 'Token ' + this.token
+        });
+
+        return this.http.get(this.formEndpoint + "?id=" + id, {
+            headers: headers
+        });
     }
 
     editForm(id : number, form : Form) : ServerResponse {
@@ -49,8 +68,14 @@ export class ServerApiService {
         return { error : null, object : null };
     }
 
-    listForms() : ServerResponse {
-        return { error : null, object : null };
+    listForms(filter: string) : Observable<Object> {
+        let headers = new HttpHeaders({
+            'Authorization': 'Token ' + this.token
+        });
+
+        return this.http.get(this.formListEndpoint + "?filter=" + filter, {
+            headers: headers
+        });
     }
 
     submitForm(id : number) : ServerResponse {
@@ -73,8 +98,15 @@ export class ServerApiService {
         });
     }
 
-    getLoggedInUser() : ServerResponse {
-        return { error : null, object : null };
+    getLoggedInUser() : Observable<Object> {
+
+        let headers = new HttpHeaders({
+            'Authorization': 'Token ' + this.token
+        });
+
+        return this.http.get(this.userMeEndpoint, {
+            headers: headers
+        });
     }
 
     temp_stepPayForm() : Form {

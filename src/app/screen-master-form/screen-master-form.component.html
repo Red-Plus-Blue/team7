@@ -1,3 +1,17 @@
+<div style="height:75px" class="mx-3"> 
+        <p class="text-right">{{user.firstName}} {{user.lastName}}</p>
+        <p class="text-right">{{user.employeeSAPNumber}}</p>
+</div>
+
+<div style="border-top: 1px solid grey; border-bottom: 1px solid grey">
+    <div class="py-1">
+        <button style="width:150px" type="button" class="btn btn-lg btn-primary mx-1" (click)="buttonCreate()">Dashboard</button>
+        <button style="width:150px" type="button" class="btn btn-lg btn-primary mx-1" (click)="buttonEdit()">Submit</button>
+        <button style="width:150px" type="button" class="btn btn-lg btn-danger mx-1" (click)="buttonReview()">Delete</button>
+    </div>
+    
+</div>
+
 <div align="left">
     <p style="margin:0;padding:0;line-height:5px;"><span style="color: red;">*</span>=Required fields</p>
 </div>
@@ -9,18 +23,18 @@
     </div>
 </div>
 <div class="m-3">
-        <div *ngFor="let section of form.sections">
+        <div *ngFor="let section of form.sections; let i = index">
             <ng-container [ngSwitch]="section?.sectionType">
-                <app-section-employee-information           *ngSwitchCase="'employee_information'" [inputSection]="section" [departments]="departments"></app-section-employee-information>
-                <app-section-responsibilities-and-goals     *ngSwitchCase="'responsibilities_and_goals'" [inputSection]="section"></app-section-responsibilities-and-goals>
-                <app-section-core-values                    *ngSwitchCase="'core_values'" [inputSection]="section"></app-section-core-values>
-                <app-section-leadership-assessment          *ngSwitchCase="'leadership_assessment'" [inputSection]="section"></app-section-leadership-assessment>
-                <app-section-professional-development-plan  *ngSwitchCase="'professional_development_plan'" [inputSection]="section"></app-section-professional-development-plan>
-                <app-section-narrative-summary              *ngSwitchCase="'narrative_summary'" [inputSection]="section"></app-section-narrative-summary>
-                <app-section-comments                       *ngSwitchCase="'comments'" [inputSection]="section"></app-section-comments>
-                <app-section-signatures                     *ngSwitchCase="'signatures'" [inputSection]="section"></app-section-signatures>
-                <app-section-appeal-information             *ngSwitchCase="'appeal_information'" [inputSection]="section" [departments]="departments"></app-section-appeal-information>
-                <app-section-written-appeal                 *ngSwitchCase="'written_appeal'" [inputSection]="section"></app-section-written-appeal>
+                <app-section-employee-information           *ngSwitchCase="'employee_information'"          [inputSection]="section" [departments]="departments"></app-section-employee-information>
+                <app-section-responsibilities-and-goals     *ngSwitchCase="'responsibilities_and_goals'"    [sectionNumber]="i" [inputSection]="section"></app-section-responsibilities-and-goals>
+                <app-section-core-values                    *ngSwitchCase="'core_values'"                   [sectionNumber]="i" [inputSection]="section"></app-section-core-values>
+                <app-section-leadership-assessment          *ngSwitchCase="'leadership_assessment'"         [sectionNumber]="i" [inputSection]="section"></app-section-leadership-assessment>
+                <app-section-professional-development-plan  *ngSwitchCase="'professional_development_plan'" [sectionNumber]="i" [inputSection]="section"></app-section-professional-development-plan>
+                <app-section-narrative-summary              *ngSwitchCase="'narrative_summary'"             [sectionNumber]="i" [inputSection]="section"></app-section-narrative-summary>
+                <app-section-comments                       *ngSwitchCase="'comments'"                      [sectionNumber]="i" [inputSection]="section"></app-section-comments>
+                <app-section-signatures                     *ngSwitchCase="'signatures'"                    [inputSection]="section"></app-section-signatures>
+                <app-section-appeal-information             *ngSwitchCase="'appeal_information'"            [sectionNumber]="i" [inputSection]="section" [departments]="departments"></app-section-appeal-information>
+                <app-section-written-appeal                 *ngSwitchCase="'written_appeal'"                [inputSection]="section"></app-section-written-appeal>
                 <div *ngSwitchDefault>Failed to read section</div>
             </ng-container>
         </div>

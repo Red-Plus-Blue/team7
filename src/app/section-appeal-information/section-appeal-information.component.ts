@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppealInformationSection } from '../server-objects/sections/appeal-information-section';
 import { Section } from '../server-objects/section';
+import { RomanNumeralConverter } from '../util/roman-numeral-conversion';
 
 @Component({
   selector: 'app-section-appeal-information',
@@ -15,6 +16,8 @@ export class SectionAppealInformationComponent implements OnInit {
     section : AppealInformationSection;
     @Input() inputSection : Section;
     @Input() departments : String[];
+    @Input() sectionNumber : number;
+    protected sectionNumberInRomanNumberals : string = "I";
 
     constructor() { }
 

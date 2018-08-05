@@ -1,0 +1,29 @@
+<div>
+    
+    <div style="height:75px" class="mx-3"> 
+            <p class="text-right">{{user.firstName}} {{user.lastName}}</p>
+            <p class="text-right">{{user.employeeSAPNumber}}</p>
+    </div>
+    
+    <div style="border-top: 1px solid grey; border-bottom: 1px solid grey">
+        <div class="py-1">
+            <button [hidden]="view == 'create'" style="width:150px" type="button" class="btn btn-lg btn-primary mx-1" (click)="buttonCreate()">Create</button>
+            <button [hidden]="view != 'create'" style="width:150px" type="button" class="btn btn-lg btn-outline-primary mx-1" disabled>Create</button>
+
+            <button [hidden]="view == 'edit'" style="width:150px" type="button" class="btn btn-lg btn-primary mx-1" (click)="buttonEdit()">Edit</button>
+            <button [hidden]="view != 'edit'" style="width:150px" type="button" class="btn btn-lg btn-outline-primary mx-1" disabled>Edit</button>
+            
+            <button [hidden]="view == 'review'" style="width:150px" type="button" class="btn btn-lg btn-primary mx-1" (click)="buttonReview()">Review</button>
+            <button [hidden]="view != 'review'" style="width:150px" type="button" class="btn btn-lg btn-outline-primary mx-1" disabled>Review</button>
+        </div>
+        
+    </div>
+
+    <div class="container w-50 py-3">
+        <app-dashboard-review [hidden]="view != 'review'"></app-dashboard-review>
+        <app-dashboard-edit [hidden]="view != 'edit'"></app-dashboard-edit>
+        <app-dashboard-create [hidden]="view != 'create'"></app-dashboard-create>
+    </div>
+
+
+</div>

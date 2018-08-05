@@ -1,0 +1,16 @@
+<table class="table" style="width:100%">
+    <tr>
+        <th>Employee</th>
+        <th>SAP Number</th>
+        <th>Form</th>
+        <th>Date Created</th>
+        <th>State</th>        
+    </tr>
+    <tr *ngFor="let formSummary of formsToReview" style="background-color:lightgray">
+        <td>{{formSummary.employee}}</td>
+        <td>{{formSummary.employeeSAPNumber}}</td>
+        <td>{{formSummary.formType}}</td>
+        <td>{{formSummary.dateCreated}}</td>
+        <td>Review (You)</td>        
+    </tr>
+</table>

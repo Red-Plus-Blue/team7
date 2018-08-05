@@ -1,0 +1,16 @@
+<table class="table" style="width:100%">
+    <tr>
+        <th>Employee</th>
+        <th>SAP Number</th>
+        <th>Form</th>
+        <th>Date Created</th>
+        <th>State</th>        
+    </tr>
+    <tr *ngFor="let formSummary of formsToEdit" style="background-color:lightgray; cursor: pointer;" (click)="editForm()">
+        <td>{{formSummary.employee}}</td>
+        <td>{{formSummary.employeeSAPNumber}}</td>
+        <td>{{formSummary.formType}}</td>
+        <td>{{formSummary.dateCreated}}</td>
+        <td>Edit</td>      
+    </tr>
+</table>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CoreValuesSection } from '../server-objects/sections/core-values-section';
 import { Section } from '../server-objects/section';
+import { RomanNumeralConverter } from '../util/roman-numeral-conversion';
 
 @Component({
   selector: 'app-section-core-values',
@@ -14,12 +15,15 @@ export class SectionCoreValuesComponent implements OnInit {
 
     section : CoreValuesSection;
     @Input() inputSection : Section;
+    @Input() sectionNumber : number;
+
+    protected sectionNumberInRomanNumerals : string = "I";
 
     constructor() { }
 
     ngOnInit() {
         this.section = this.inputSection as CoreValuesSection;
-        console.log(this.section.ratings);
+        this.sectionNumberInRomanNumerals = RomanNumeralConverter.getRomanNumerals(this.sectionNumber);
     }
 
 }

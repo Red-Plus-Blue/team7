@@ -57,40 +57,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let entry of entArray; let i = index">
-                            <td [(ngModel)]="entry.count" name="{{entry.count}}">Entry: {{i+1}} </td>
+                        <tr *ngFor="let goal of section.goals; let i = index">
                             <td>
-                                <input [(ngModel)]="entry.weight" class="form-control" type="number" style="width: 80px;" name="{{entry.weight}}" />
+                                <p>{{goal.entryNumber}}</p>
+                            </td>
+                            <td>
+                                <input [(ngModel)]="goal.evaluationWeight" type="number" style="width: 80px;"/>
                             </td>     
                             <td>
-                                <input [(ngModel)]="entry.rating" class="form-control" type="number" onkeydown="return false" style="width: 60px;" min="1" max="3" name="{{entry.rating}}" />
+                                <input [(ngModel)]="goal.rating" type="number" onkeydown="return false" style="width: 60px;" min="1" max="3"/>
                             </td>
                             <td>
-                                <textarea [(ngModel)]="entry.goal" class="form-control" rows="2" name="{{entry.goal}}" ></textarea>
+                                <textarea rows="2">{{goal.responsibility}}</textarea>
                             </td>
                             <td>
-                                <textarea [(ngModel)]="entry.summary" class="form-control" rows="2" name="{{entry.summary}}" ></textarea>
+                                <textarea rows="2">{{goal.performanceResults}}</textarea>
                             </td>
                             <td>
-                                <button class="btn btn-default"  type="button" (click)="deleteEntry(i)">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="newentryCount" [(ngModel)]="newentry.count" name="newentryCount">Entry</td>
-                            <td>
-                                <input class="form-control" type="number" style="width: 60px;"  id="newentryWeight" [(ngModel)]="newentry.weight" name="newentryWeight" />
-                            </td>    
-                            <td>
-                                <input class="form-control" type="number" onkeydown="return false" style="width: 50px;" min="1" max="3" id="newentryRating" [(ngModel)]="newentry.rating" name="newentryRating" />
-                            </td>
-                            <td>
-                                <textarea class="form-control" rows="2" id="newentryGoal" [(ngModel)]="newentry.goal" name="newentryGoal" ></textarea>
-                            </td>
-                            <td>
-                                <textarea class="form-control" rows="2" id="newentrySummary" [(ngModel)]="newentry.summary" name="newentrySummary" ></textarea>
-                            </td>
-                            <td>
-                                <button class="btn btn-default" type="button" (click)="addEntry()">Add</button>
+                                    <button [hidden]="(section.goals.length == 1)" class="btn btn-default"  type="button" (click)="deleteGoal(goal.entryNumber)">Delete</button>
+                                    <button [hidden]="(i < (section.goals.length - 1)) && (section.goals.length > 1)" class="btn btn-default"  type="button" (click)="addGoal()">Add</button>
                             </td>
                         </tr>
                     </tbody>

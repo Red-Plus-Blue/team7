@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServerApiService } from '../server-api.service';
 import { ServerResponse } from '../server-objects/server-response';
+import { User }             from '../server-objects/user';
 
 @Component({
   selector: 'app-screen-login',
@@ -32,7 +33,21 @@ export class ScreenLoginComponent implements OnInit {
         this.serverApi.login(this.username, this.password).subscribe(
             (response: ServerResponse) => {
                 if(response.object != null) {
-                    this.router.navigateByUrl('/evaluation');
+
+                    let token = <string>response.object;
+                    this.serverApi.setToken(token);
+
+                    this.serverApi.getLoggedInUser().subscribe(
+                        (response: ServerResponse) => {
+                            
+                            let user = <User>response.object;
+                            this.serverApi.setUser(user);
+                            
+                            this.router.navigateByUrl('/dashboard');
+                        },
+                        (error) => { this.loginFailed("Could not get user information."); }
+                    );
+
                 } else { 
                     this.loginFailed(null);
                 }
